@@ -1,7 +1,13 @@
 (ns crud.core
-  (:gen-class))
+  (:gen-class)
+  (:require [reitit.ring :as ring]))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (println "Hello, World!"))
+(defn app [_]
+  (ring/handler
+   (ring/router
+    [["/" {:handler default}]
+     ["/user"
+      ["/list" {:handler list-users}]
+      ["/create" {:handler create-user}]
+      ["/edit" {:handler edit-user}]
+      ["/delete" {:handler delete-user}]])))
