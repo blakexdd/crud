@@ -5,7 +5,8 @@
 (def app
   (ring/ring-handler
    (ring/router
-    [["/" {:handler users-ctl/default}]])
+    [["/" {:handler users-ctl/default}]
+     ["/user/create" {:handler users-ctl/create-user}]])
    (ring/routes
     (ring/create-resource-handler
      {:path "/"})
