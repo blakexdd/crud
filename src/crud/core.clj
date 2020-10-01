@@ -1,13 +1,10 @@
 (ns crud.core
   (:gen-class)
-  (:require [reitit.ring :as ring]))
+  (:require [ring.adapter.jetty :as jetty]
+            [crud.router :as router]))
 
-(defn app [_]
-  (ring/handler
-   (ring/router
-    [["/" {:handler default}]
-     ["/user"
-      ["/list" {:handler list-users}]
-      ["/create" {:handler create-user}]
-      ["/edit" {:handler edit-user}]
-      ["/delete" {:handler delete-user}]])))
+(defn -main
+  [& args]
+  (println "Starting server")
+  (jetty/run-jetty #'router/app {:port 8080})
+)
