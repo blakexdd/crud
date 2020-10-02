@@ -3,6 +3,7 @@
             [crud.controllers.users :as users-ctl]
             [reitit.ring.coercion :as rrc]
             [reitit.coercion.schema]
+            [reitit.ring.middleware.parameters]
             [schema.core :as s]))
 
 (def app
@@ -23,9 +24,13 @@
                                                  :oms s/Int
                                                  }
                                           }
-                             :handler users-ctl/dump-user
+                             :handler (fn [res]
+                                        (users-ctl/dump-user res)
+                                        (app {:request-method :get
+                                              :uri "/"}))
                              }}]]
     {:data {:middleware [rrc/coerce-exceptions-middleware
+                         reitit.ring.middleware.parameters/parameters-middleware
                          rrc/coerce-request-middleware
                          rrc/coerce-response-middleware]}})
    (ring/routes
@@ -34,12 +39,12 @@
     (ring/create-default-handler
      {:not-found (constantly {:status 404 :body "Not found"})}))))
 
-(app {:request-method :post
-      :uri "/create-user"
-      :form-params {
-                    :fname "Vova"
-                    :gender "Male"
-                    :bday "06.08.2001"
-                    :adress "Len"
-                    :oms 112
-                    }}) 
+;(app {:request-method :post
+;      :uri "/create-user"
+;      :form {
+;                    :fname "Vova"
+;                    :gender "Male"
+;                    :bday "06.08.2001"
+;                    :adress "Len" 
+;                    :oms 112
+;                    }}) 
