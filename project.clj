@@ -6,7 +6,8 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [metosin/reitit "0.5.6"]
                  [ring "1.8.1"]
-                 [reagent "1.0.0-alpha2"]]
+                 [reagent "1.0.0-alpha2"]
+                 [org.clojure/clojurescript "1.10.764"]]
   :main ^:skip-aot crud.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
