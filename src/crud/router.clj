@@ -4,7 +4,8 @@
             [reitit.ring.coercion :as rrc]
             [reitit.coercion.schema]
             [reitit.ring.middleware.parameters]
-            [schema.core :as s]))
+            [schema.core :as s]
+            [ring.util.response :as response]))
 
 (def first-name-params {
                          :form-data {
@@ -46,8 +47,7 @@
                             :parameters patient-params
                             :handler (fn [res]
                                        (users-ctl/create-patient-core res)
-                                       (app {:request-method :get
-                                             :uri "/"}))
+                                       (response/redirect "/"))
                             }}]
        ["/edited" {
                       :post {
@@ -55,8 +55,7 @@
                              :parameters patient-params
                              :handler (fn [res]
                                         (users-ctl/edit-patient-core res)
-                                        (app {:request-method :get
-                                              :uri "/patient/list"}))
+                                        (response/redirect "/patient/list"))
                              }
                     }]]]
     {:data {:middleware [rrc/coerce-exceptions-middleware
