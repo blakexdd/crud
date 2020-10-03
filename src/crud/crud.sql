@@ -10,11 +10,18 @@ CREATE TABLE IF NOT EXISTS patients(
        oms integer NOT NULL
 );
 
+-- :name update-user :! :raw
+UPDATE patients
+       SET gender = :gender,
+           bday = :bday,
+           adress = :adress,
+           oms = :oms
+       WHERE firstname = :fname
 
 -- :name get-user :? :1
 SELECT * FROM patients
        WHERE firstname = :fname
-       
+
 -- :name add-user :i! :raw
 INSERT INTO patients
        VALUES (:fname, :gender, :bday, :adress, :oms);

@@ -39,10 +39,38 @@
        [:td (:adress user)]
        [:td (:oms user)]
        [:td
-        [:form {:action "/user/list" :method "post"}
+        [:form {:action "/user/delete" :method "post"}
          [:button {:type "submit"
                    :name "fname"
-                   :value (:firstname user)} "delete"]]]])]]
+                   :value (:firstname user)} "delete"]]
+        [:form {:action "/user/edit" :method "post"}
+         [:button {:type "submit"
+                   :name "fname"
+                   :value (:firstname user)} "edit"]]]])]]
+   ))
+
+(defn edit-user
+  [user]
+  (page/html5
+   (println (str "Gender M: " (if (= (:gender user) "F") "checked")))
+   (gen-page-head "Edit user")
+   [:h1 "Edit user"]
+   [:form {:action "/edit-user" :method "post"}
+    [:p "Full name: " [:input {:type "text" :name "fname" :value (:firstname user)}]]
+    [:p "Gender: "
+     [:span [:label [:input {:type "radio"
+                             :name "gender"
+                             :value "M"
+                             :checked (if (= (:gender user) "M") "checked")}] "Male"]
+      [:label [:input {:type "radio"
+                       :name "gender"
+                       :value "F"
+                       :checked (if (= (:gender user) "F") "checked")
+                       }] "Female"]]]
+    [:p "Date of birth: " [:input {:type "date" :name "bday" :value (:bday user)}]]
+    [:p "Adress: " [:input {:type "text" :name "adress" :value (:adress user)}]]
+    [:p "OMS: " [:input {:type "number" :name "oms" :value (:oms user)}]]
+    [:p [:input {:type "submit" "value" "Edit user"}]]]
    ))
 
 (def user-create

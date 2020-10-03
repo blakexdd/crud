@@ -11,6 +11,32 @@
    :headers {"Content-Type" "text/html"}
    :body ui/main-options})
 
+(defn edit-user
+  [req]
+  (let [params (keywordize-keys (:form-params req))
+        firstname (:fname params)]
+    (def user (sql/get-user db {:fname firstname}))
+    (println (str "Edit params: " user))
+    {
+     :status 200
+     :headers {"Content-Type" "text/html"}
+     :body (ui/edit-user user)
+     }
+    ))
+
+(defn user-edit
+  [req]
+  (let [params (keywordize-keys (:form-params req))
+        firstname (:fname params)]
+    (sql/update-user db {
+                         :fname firstname
+                         :gender (:gender params)
+                         :bday (:bday params)
+                         :adress (:adress params)
+                         :oms (read-string (:oms params))
+                         })
+  ))
+
 (defn delete-user
   [req]
   (let [params (keywordize-keys (:form-params req))

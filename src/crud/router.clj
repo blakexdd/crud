@@ -12,16 +12,23 @@
     [["/" {:handler users-ctl/default}]
      ["/user/list" {:get {
                           :handler users-ctl/list-users
-                          }
-                    :post {
-                           :coercion reitit.coercion.schema/coercion
-                           :parameters {
-                                        :form-data {
-                                                    :fname s/Str
-                                                    }
-                                        }
-                           :handler users-ctl/delete-user
-                           }}]
+                          }}]
+     ["/user/delete" {:post {
+                             :coercion reitit.coercion.schema/coercion
+                             :parameters {
+                                          :form-data {
+                                                      :fname s/Str
+                                                      }
+                                          }
+                             :handler users-ctl/delete-user}}]
+     ["/user/edit" {:post {
+                             :coercion reitit.coercion.schema/coercion
+                             :parameters {
+                                          :form-data {
+                                                      :fname s/Str
+                                                      }
+                                          }
+                             :handler users-ctl/edit-user}}]
      ["/user/create" {:get {
                             :handler users-ctl/create-user
                             }}]
@@ -40,7 +47,25 @@
                                         (users-ctl/dump-user res)
                                         (app {:request-method :get
                                               :uri "/"}))
-                             }}]]
+                             }}]
+     ["/edit-user" {
+                    :post {
+                           :coercion reitit.coercion.schema/coercion
+                           :parameters {
+                                        :form-data {
+                                                    :fname s/Str
+                                                    :gender s/Str
+                                                    :bday s/Str
+                                                    :adress s/Str
+                                                    :oms s/Int
+                                                    }
+                                        }
+                           :handler (fn [res]
+                                      (users-ctl/user-edit res)
+                                      (app {:request-method :get
+                                            :uri "/user/list"}))
+                           }
+                    }]]
     {:data {:middleware [rrc/coerce-exceptions-middleware
                          reitit.ring.middleware.parameters/parameters-middleware
                          rrc/coerce-request-middleware
