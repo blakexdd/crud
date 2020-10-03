@@ -25,11 +25,24 @@
    (gen-page-head "See users")
    [:table
     [:tbody 
-     [:tr [:td "First Name"] [:td "Gender"] [:td "Birth Date"]
-      [:td "Adress"] [ :td "oms"]]
+     [:tr
+      [:td "First Name"]
+      [:td "Gender"]
+      [:td "Birth Date"]
+      [:td "Adress"]
+      [ :td "oms"]]
     (for [user users]
-      [:tr [:td (:firstname user)] [:td (:gender user)] [:td (:bday user)]
-       [:td (:adress user)] [:td (:oms user)]])]]
+      [:tr
+       [:td (:firstname user)]
+       [:td (:gender user)]
+       [:td (:bday user)]
+       [:td (:adress user)]
+       [:td (:oms user)]
+       [:td
+        [:form {:action "/user/list" :method "post"}
+         [:button {:type "submit"
+                   :name "fname"
+                   :value (:firstname user)} "delete"]]]])]]
    ))
 
 (def user-create

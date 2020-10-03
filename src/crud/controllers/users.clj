@@ -11,9 +11,24 @@
    :headers {"Content-Type" "text/html"}
    :body ui/main-options})
 
+(defn delete-user
+  [req]
+  (let [params (keywordize-keys (:form-params req))
+        firstname (:fname params)]
+    (println (str "Fname: " params))
+    (sql/delete-user db {:fname (params :fname)})
+    (def users (sql/patients-all db))
+    (clojure.pprint/pprint users)
+    {
+     :status 200
+     :headers {"Content-Type" "text/html"}
+     :body (ui/list-users users)
+     }
+  ))
+
 (defn list-users
   [req]
-  (def users (sql/patients-all db {:tablename "patients"}))
+  (def users (sql/patients-all db))
   (println "ALL USERS")
   (clojure.pprint/pprint users)
   {

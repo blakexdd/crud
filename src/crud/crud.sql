@@ -14,10 +14,14 @@ CREATE TABLE IF NOT EXISTS patients(
 -- :name get-user :? :1
 SELECT * FROM patients
        WHERE firstname = :fname
-
+       
 -- :name add-user :i! :raw
 INSERT INTO patients
        VALUES (:fname, :gender, :bday, :adress, :oms);
+
+-- :name delete-user :! :raw
+DELETE FROM patients
+       WHERE firstname = :fname
 
 -- :name drop :! :raw
 DROP TABLE IF EXISTS patients;

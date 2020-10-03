@@ -12,7 +12,16 @@
     [["/" {:handler users-ctl/default}]
      ["/user/list" {:get {
                           :handler users-ctl/list-users
-                          }}]
+                          }
+                    :post {
+                           :coercion reitit.coercion.schema/coercion
+                           :parameters {
+                                        :form-data {
+                                                    :fname s/Str
+                                                    }
+                                        }
+                           :handler users-ctl/delete-user
+                           }}]
      ["/user/create" {:get {
                             :handler users-ctl/create-user
                             }}]
