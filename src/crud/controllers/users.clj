@@ -1,5 +1,8 @@
 (ns crud.controllers.users
-  (:require [crud.ui :as ui]))
+  (:use clojure.walk)
+  (:require [crud.ui :as ui]
+            [crud.db :refer [db]]
+            [crud.sql :as sql]))
 
 (defn default
   [req]
@@ -18,5 +21,17 @@
 
 (defn dump-user
   [res]
-  (println (str "form params: " (:form-params res)))
- )
+  (let [params (keywordize-keys (:form-params res))
+        firstname (:fname params)]
+    (def already-exists (sql/get-user db {:fname firstname}))
+    (if (nil? already-exists)
+      (sql/add-user db {
+                        :fname firstname
+                        :gender (:gender params)
+                        :bday (:bday params)
+                        :adress (:adress params)
+                        :oms (read-string (:oms params))
+                        })
+      (println "exists")
+      )
+   ))

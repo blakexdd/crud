@@ -25,8 +25,10 @@
    [:h1 "Create user"]
    [:form {:action "/create-user" :method "post"}
     [:p "Full name: " [:input {:type "text" :name "fname"}]]
-    [:p "Gender: " [:input {:type "text" :name "gender"}]]
-    [:p "Date of birth: " [:input {:type "text" :name "bday"}]]
+    [:p "Gender: "
+     [:span [:label [:input {:type "radio" :name "gender" :value "M"}] "Male"]
+           [:label [:input {:type "radio" :name "gender" :value "F"}] "Female"]]]
+    [:p "Date of birth: " [:input {:type "date" :name "bday"}]]
     [:p "Adress: " [:input {:type "text" :name "adress"}]]
     [:p "OMS: " [:input {:type "number" :name "oms"}]]
     [:p [:input {:type "submit" "value" "Create user"}]]]))

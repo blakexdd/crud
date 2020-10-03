@@ -38,13 +38,3 @@
      {:path "/"})
     (ring/create-default-handler
      {:not-found (constantly {:status 404 :body "Not found"})}))))
-
-;(app {:request-method :post
-;      :uri "/create-user"
-;      :form {
-;                    :fname "Vova"
-;                    :gender "Male"
-;                    :bday "06.08.2001"
-;                    :adress "Len" 
-;                    :oms 112
-;                    }}) 
