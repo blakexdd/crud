@@ -10,6 +10,9 @@
   (ring/ring-handler
    (ring/router
     [["/" {:handler users-ctl/default}]
+     ["/user/list" {:get {
+                          :handler users-ctl/list-users
+                          }}]
      ["/user/create" {:get {
                             :handler users-ctl/create-user
                             }}]

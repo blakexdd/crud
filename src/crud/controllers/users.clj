@@ -11,6 +11,18 @@
    :headers {"Content-Type" "text/html"}
    :body ui/main-options})
 
+(defn list-users
+  [req]
+  (def users (sql/patients-all db {:tablename "patients"}))
+  (println "ALL USERS")
+  (clojure.pprint/pprint users)
+  {
+   :status 200
+   :headers {"Content-Type" "text/html"}
+   :body (ui/list-users users)
+   }
+  )
+
 (defn create-user
   [req]
   {

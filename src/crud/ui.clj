@@ -19,6 +19,19 @@
      [:a {:href "/user/list"}
       [:li "List users"]]]]))
 
+(defn list-users
+  [users]
+  (page/html5
+   (gen-page-head "See users")
+   [:table
+    [:tbody 
+     [:tr [:td "First Name"] [:td "Gender"] [:td "Birth Date"]
+      [:td "Adress"] [ :td "oms"]]
+    (for [user users]
+      [:tr [:td (:firstname user)] [:td (:gender user)] [:td (:bday user)]
+       [:td (:adress user)] [:td (:oms user)]])]]
+   ))
+
 (def user-create
   (page/html5
    (gen-page-head "Create user")

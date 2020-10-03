@@ -1,4 +1,4 @@
--- :name users-all :? :*
+-- :name patients-all :? :*
 SELECT * FROM patients;
 
 -- :name create :! :raw

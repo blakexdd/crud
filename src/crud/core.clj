@@ -8,9 +8,9 @@
 (defn -main
   [& args]
   (println "Starting server")
-  (sql/drop db)
+  ;(sql/drop db)
   (sql/create db)
   ;(sql/add db)
-  (clojure.pprint/pprint (sql/users-all db))
+  ;(clojure.pprint/pprint (sql/get-all db))
   (jetty/run-jetty #'router/app {:port 8080})
 )
