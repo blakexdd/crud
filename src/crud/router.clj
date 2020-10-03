@@ -34,7 +34,9 @@
        ["/delete" {:post {
                            :coercion reitit.coercion.schema/coercion
                            :parameters first-name-params
-                           :handler users-ctl/delete-patient-core}}]
+                           :handler (fn [res]
+                                      (users-ctl/delete-patient-core res)
+                                      (response/redirect "/patient/list"))}}]
        ["/edit" {:post {
                          :coercion reitit.coercion.schema/coercion
                          :parameters first-name-params

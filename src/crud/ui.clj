@@ -3,48 +3,51 @@
 
 (defn gen-page-head
   [title]
-  [:head
-   [:title (str "Locations: " title)]
-   (page/include-css "/css/styles.css")])
+  [:head (page/include-css "main.css")
+   [:title (str "Locations: " title)]])
 
 (def main-page
   (page/html5
    (gen-page-head "Main page")
+   [:h1 "Welcome"]
    [:div
-    [:ui
-     [:a {:href "/patient/create"}
-      [:li "Create patient"]]
-     [:a {:href "/patient/list"}
-      [:li "List patients"]]]]))
+     [:a {:href "/patient/create" :class "btn-grad"}
+      [:span "Create patient"]]
+     [:a {:href "/patient/list" :class "btn-grad"}
+      [:span "List patients"]]]))
 
 (defn list-patients
   [users]
   (page/html5
    (gen-page-head "See users")
-   [:table
-    [:tbody 
-     [:tr
-      [:td "First Name"]
-      [:td "Gender"]
-      [:td "Birth Date"]
-      [:td "Adress"]
-      [ :td "oms"]]
-    (for [user users]
-      [:tr
-       [:td (:firstname user)]
-       [:td (:gender user)]
-       [:td (:bday user)]
-       [:td (:adress user)]
-       [:td (:oms user)]
-       [:td
-        [:form {:action "/patient/delete" :method "post"}
-         [:button {:type "submit"
-                   :name "fname"
-                   :value (:firstname user)} "delete"]]
-        [:form {:action "/patient/edit" :method "post"}
-         [:button {:type "submit"
-                   :name "fname"
-                   :value (:firstname user)} "edit"]]]])]]
+   [:h1 "Welcome"]
+   [:div {:class "limiter"}
+    [:div {:class "container-table100"}
+     [:div {:class "wrap-table100"}
+       [:table
+        [:tbody
+         [:tr
+          [:td "First Name"]
+          [:td "Gender"]
+          [:td "Birth Date"]
+          [:td "Adress"]
+          [ :td "oms"]]
+        (for [user users]
+          [:tr
+           [:td (:firstname user)]
+           [:td (:gender user)]
+           [:td (:bday user)]
+           [:td (:adress user)]
+           [:td (:oms user)]
+           [:td
+            [:form {:action "/patient/delete" :method "post"}
+             [:button {:type "submit"
+                       :name "fname"
+                       :value (:firstname user)} "delete"]]
+            [:form {:action "/patient/edit" :method "post"}
+             [:button {:type "submit"
+                       :name "fname"
+                       :value (:firstname user)} "edit"]]]])]]]]]
    ))
 
 (defn edit-patient
