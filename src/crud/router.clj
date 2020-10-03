@@ -6,66 +6,59 @@
             [reitit.ring.middleware.parameters]
             [schema.core :as s]))
 
+(def first-name-params {
+                         :form-data {
+                                      :fname s/Str
+                                      }
+                         })
+
+(def patient-params {
+                      :form-data {
+                                   :fname s/Str
+                                   :gender s/Str
+                                   :bday s/Str
+                                   :adress s/Str
+                                   :oms s/Int
+                                   }
+                      })
+
 (def app
   (ring/ring-handler
    (ring/router
     [["/" {:handler users-ctl/default}]
-     ["/user/list" {:get {
-                          :handler users-ctl/list-users
-                          }}]
-     ["/user/delete" {:post {
-                             :coercion reitit.coercion.schema/coercion
-                             :parameters {
-                                          :form-data {
-                                                      :fname s/Str
-                                                      }
-                                          }
-                             :handler users-ctl/delete-user}}]
-     ["/user/edit" {:post {
-                             :coercion reitit.coercion.schema/coercion
-                             :parameters {
-                                          :form-data {
-                                                      :fname s/Str
-                                                      }
-                                          }
-                             :handler users-ctl/edit-user}}]
-     ["/user/create" {:get {
-                            :handler users-ctl/create-user
-                            }}]
-     ["/create-user" {:post {
-                             :coercion reitit.coercion.schema/coercion
-                             :parameters {
-                                          :form-data {
-                                                 :fname s/Str
-                                                 :gender s/Str
-                                                 :bday s/Str
-                                                 :adress s/Str
-                                                 :oms s/Int
-                                                 }
-                                          }
-                             :handler (fn [res]
-                                        (users-ctl/dump-user res)
-                                        (app {:request-method :get
-                                              :uri "/"}))
-                             }}]
-     ["/edit-user" {
-                    :post {
+     ["/patient"
+       ["/list" {:get {
+                        :handler users-ctl/list-patients
+                        }}]
+       ["/delete" {:post {
                            :coercion reitit.coercion.schema/coercion
-                           :parameters {
-                                        :form-data {
-                                                    :fname s/Str
-                                                    :gender s/Str
-                                                    :bday s/Str
-                                                    :adress s/Str
-                                                    :oms s/Int
-                                                    }
-                                        }
-                           :handler (fn [res]
-                                      (users-ctl/user-edit res)
-                                      (app {:request-method :get
-                                            :uri "/user/list"}))
-                           }
-                    }]]
+                           :parameters first-name-params
+                           :handler users-ctl/delete-patient-core}}]
+       ["/edit" {:post {
+                         :coercion reitit.coercion.schema/coercion
+                         :parameters first-name-params
+                         :handler users-ctl/edit-patient}}]
+       ["/create" {:get {
+                          :handler users-ctl/create-patient
+                          }
+                   :post {
+                            :coercion reitit.coercion.schema/coercion
+                            :parameters patient-params
+                            :handler (fn [res]
+                                       (users-ctl/create-patient-core res)
+                                       (app {:request-method :get
+                                             :uri "/"}))
+                            }}]
+       ["/edited" {
+                      :post {
+                             :coercion reitit.coercion.schema/coercion
+                             :parameters patient-params
+                             :handler (fn [res]
+                                        (users-ctl/edit-patient-core res)
+                                        (app {:request-method :get
+                                              :uri "/patient/list"}))
+                             }
+                    }]]]
     {:data {:middleware [rrc/coerce-exceptions-middleware
                          reitit.ring.middleware.parameters/parameters-middleware
                          rrc/coerce-request-middleware

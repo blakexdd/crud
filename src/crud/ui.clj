@@ -7,19 +7,17 @@
    [:title (str "Locations: " title)]
    (page/include-css "/css/styles.css")])
 
-(def main-options
+(def main-page
   (page/html5
    (gen-page-head "Main page")
    [:div
     [:ui
-     [:a {:href "/user/create"}
-      [:li "Create user"]]
-     [:a {:href "/user/edit"}
-      [:li "Edit user"]]
-     [:a {:href "/user/list"}
-      [:li "List users"]]]]))
+     [:a {:href "/patient/create"}
+      [:li "Create patient"]]
+     [:a {:href "/patient/list"}
+      [:li "List patients"]]]]))
 
-(defn list-users
+(defn list-patients
   [users]
   (page/html5
    (gen-page-head "See users")
@@ -39,23 +37,23 @@
        [:td (:adress user)]
        [:td (:oms user)]
        [:td
-        [:form {:action "/user/delete" :method "post"}
+        [:form {:action "/patient/delete" :method "post"}
          [:button {:type "submit"
                    :name "fname"
                    :value (:firstname user)} "delete"]]
-        [:form {:action "/user/edit" :method "post"}
+        [:form {:action "/patient/edit" :method "post"}
          [:button {:type "submit"
                    :name "fname"
                    :value (:firstname user)} "edit"]]]])]]
    ))
 
-(defn edit-user
+(defn edit-patient
   [user]
   (page/html5
    (println (str "Gender M: " (if (= (:gender user) "F") "checked")))
    (gen-page-head "Edit user")
    [:h1 "Edit user"]
-   [:form {:action "/edit-user" :method "post"}
+   [:form {:action "/patient/edited" :method "post"}
     [:p "Full name: " [:input {:type "text" :name "fname" :value (:firstname user)}]]
     [:p "Gender: "
      [:span [:label [:input {:type "radio"
@@ -73,11 +71,11 @@
     [:p [:input {:type "submit" "value" "Edit user"}]]]
    ))
 
-(def user-create
+(def create-patient
   (page/html5
    (gen-page-head "Create user")
    [:h1 "Create user"]
-   [:form {:action "/create-user" :method "post"}
+   [:form {:action "/patient/create" :method "post"}
     [:p "Full name: " [:input {:type "text" :name "fname"}]]
     [:p "Gender: "
      [:span [:label [:input {:type "radio" :name "gender" :value "M"}] "Male"]

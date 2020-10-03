@@ -9,7 +9,7 @@
   [& args]
   (println "Starting server")
   ;(sql/drop db)
-  (sql/create db)
+  (sql/create-patients-table db)
   ;(sql/add db)
   ;(clojure.pprint/pprint (sql/get-all db))
   (jetty/run-jetty #'router/app {:port 8080})

@@ -9,26 +9,27 @@
   {
    :status 200
    :headers {"Content-Type" "text/html"}
-   :body ui/main-options})
+   :body ui/main-page
+   })
 
-(defn edit-user
+(defn edit-patient
   [req]
   (let [params (keywordize-keys (:form-params req))
         firstname (:fname params)]
-    (def user (sql/get-user db {:fname firstname}))
+    (def user (sql/get-patient-by-name db {:fname firstname}))
     (println (str "Edit params: " user))
     {
      :status 200
      :headers {"Content-Type" "text/html"}
-     :body (ui/edit-user user)
+     :body (ui/edit-patient user)
      }
     ))
 
-(defn user-edit
+(defn edit-patient-core
   [req]
   (let [params (keywordize-keys (:form-params req))
         firstname (:fname params)]
-    (sql/update-user db {
+    (sql/update-patient-by-name db {
                          :fname firstname
                          :gender (:gender params)
                          :bday (:bday params)
@@ -37,48 +38,49 @@
                          })
   ))
 
-(defn delete-user
+(defn delete-patient-core
   [req]
   (let [params (keywordize-keys (:form-params req))
         firstname (:fname params)]
     (println (str "Fname: " params))
-    (sql/delete-user db {:fname (params :fname)})
-    (def users (sql/patients-all db))
+    (sql/delete-patient-by-name db {:fname (params :fname)})
+    (def users (sql/get-all-patients db))
     (clojure.pprint/pprint users)
     {
      :status 200
      :headers {"Content-Type" "text/html"}
-     :body (ui/list-users users)
+     :body (ui/list-patients users)
      }
   ))
 
-(defn list-users
+(defn list-patients
   [req]
-  (def users (sql/patients-all db))
+  (def users (sql/get-all-patients db))
   (println "ALL USERS")
   (clojure.pprint/pprint users)
   {
    :status 200
    :headers {"Content-Type" "text/html"}
-   :body (ui/list-users users)
+   :body (ui/list-patients users)
    }
   )
 
-(defn create-user
+(defn create-patient
   [req]
   {
    :status 200
    :headers {"Content-Type" "text/html"}
-   :body ui/user-create
+   :body ui/create-patient
    })
 
-(defn dump-user
+(defn create-patient-core
   [res]
   (let [params (keywordize-keys (:form-params res))
         firstname (:fname params)]
-    (def already-exists (sql/get-user db {:fname firstname}))
+    (println "Dumping users")
+    (def already-exists (sql/get-patient-by-name db {:fname firstname}))
     (if (nil? already-exists)
-      (sql/add-user db {
+      (sql/add-patient db {
                         :fname firstname
                         :gender (:gender params)
                         :bday (:bday params)

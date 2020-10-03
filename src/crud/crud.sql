@@ -1,7 +1,7 @@
--- :name patients-all :? :*
+-- :name get-all-patients :? :*
 SELECT * FROM patients;
 
--- :name create :! :raw
+-- :name create-patients-table :! :raw
 CREATE TABLE IF NOT EXISTS patients(
        firstname varchar(45) PRIMARY KEY,
        gender varchar(1) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS patients(
        oms integer NOT NULL
 );
 
--- :name update-user :! :raw
+-- :name update-patient-by-name :! :raw
 UPDATE patients
        SET gender = :gender,
            bday = :bday,
@@ -18,17 +18,17 @@ UPDATE patients
            oms = :oms
        WHERE firstname = :fname
 
--- :name get-user :? :1
+-- :name get-patient-by-name :? :1
 SELECT * FROM patients
        WHERE firstname = :fname
 
--- :name add-user :i! :raw
+-- :name add-patient :i! :raw
 INSERT INTO patients
        VALUES (:fname, :gender, :bday, :adress, :oms);
 
--- :name delete-user :! :raw
+-- :name delete-patient-by-name :! :raw
 DELETE FROM patients
        WHERE firstname = :fname
 
--- :name drop :! :raw
+-- :name drop-patients-table :! :raw
 DROP TABLE IF EXISTS patients;
