@@ -3,11 +3,11 @@ SELECT * FROM patients;
 
 -- :name create-patients-table :! :raw
 CREATE TABLE IF NOT EXISTS patients(
-       firstname varchar(45) PRIMARY KEY,
-       gender varchar(1) NOT NULL,
+       firstname text PRIMARY KEY,
+       gender char(1) NOT NULL,
        bday date NOT NULL,
-       adress varchar(100) NOT NULL,
-       oms integer NOT NULL
+       adress text NOT NULL,
+       oms bigint NOT NULL
 );
 
 -- :name update-patient-by-name :! :raw

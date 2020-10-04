@@ -77,6 +77,7 @@
   [res]
   (let [params (keywordize-keys (:form-params res))
         firstname (:fname params)]
+    (println (str "User name" firstname))
     (println "Dumping users")
     (def already-exists (sql/get-patient-by-name db {:fname firstname}))
     (if (nil? already-exists)

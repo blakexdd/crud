@@ -4,6 +4,7 @@
 (defn gen-page-head
   [title, path]
   [:head (page/include-css path)
+   [:meta {:charset "utf-8"}]
    [:title (str "Locations: " title)]])
 
 (def main-page
