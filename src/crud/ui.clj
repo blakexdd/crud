@@ -19,7 +19,7 @@
 (defn list-patients
   [users]
   (page/html5
-   (gen-page-head "See users" "../main.css")
+   (gen-page-head "See users" "../table.css")
    [:div {:class "table-title"}
       [:h3 {:class "table-title"} "Patients"]
        [:table {:class "table-fill"}
@@ -57,7 +57,7 @@
   [user]
   (page/html5
    (println (str "Gender M: " (if (= (:gender user) "F") "checked")))
-   (gen-page-head "Edit user" "../main.css")
+   (gen-page-head "Edit user" "../form.css")
    [:div {:class "container"}
      [:form {:id "patient" :action "/patient/edited" :method "post"}
       [:h3 "Edit user"]
@@ -80,7 +80,7 @@
 
 (def create-patient
   (page/html5
-   (gen-page-head "Create user" "../main.css")
+   (gen-page-head "Create user" "../form.css")
    [:div {:class "container"}
      [:form {:id "patient" :action "/patient/create" :method "post"}
       [:h3 "Create user"]
