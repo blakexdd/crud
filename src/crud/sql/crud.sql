@@ -5,7 +5,7 @@ SELECT * FROM patients;
 CREATE TABLE IF NOT EXISTS patients(
        firstname varchar(45) PRIMARY KEY,
        gender varchar(1) NOT NULL,
-       bday varchar(10) NOT NULL,
+       bday date NOT NULL,
        adress varchar(100) NOT NULL,
        oms integer NOT NULL
 );
@@ -24,7 +24,7 @@ SELECT * FROM patients
 
 -- :name add-patient :i! :raw
 INSERT INTO patients
-       VALUES (:fname, :gender, :bday, :adress, :oms);
+       VALUES (:fname, :gender, to_date(:bday, 'YYYY-MM-DD'), :adress, :oms);
 
 -- :name delete-patient-by-name :! :raw
 DELETE FROM patients
