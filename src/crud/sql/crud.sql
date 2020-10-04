@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS patients(
 -- :name update-patient-by-name :! :raw
 UPDATE patients
        SET gender = :gender,
-           bday = :bday,
+           bday = to_date(:bday, 'YYYY-MM-DD'),
            adress = :adress,
            oms = :oms
        WHERE firstname = :fname

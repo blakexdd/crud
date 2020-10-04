@@ -8,7 +8,7 @@
 (defn -main
   [& args]
   (println "Starting server")
-  (sql/drop-patients-table db)
+  ;(sql/drop-patients-table db)
   (sql/create-patients-table db)
   ;(sql/add db)
   ;(clojure.pprint/pprint (sql/get-all db))
