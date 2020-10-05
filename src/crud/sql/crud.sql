@@ -25,6 +25,10 @@ UPDATE patients
 SELECT * FROM patients
        WHERE firstname = :fname
 
+-- :name get-patient-by-oms :? :1
+SELECT * FROM patients
+        WHERE oms = :oms
+
 -- :name add-patient :i! :raw
 INSERT INTO patients
        (firstname, gender, bday, adress, oms)

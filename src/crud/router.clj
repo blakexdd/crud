@@ -5,7 +5,6 @@
             [reitit.coercion.schema]
             [reitit.ring.middleware.parameters]
             [schema.core :as s]
-            [ring.util.response :as response]
             [hiccup.page :as page]))
 
 (def patient-id-params
@@ -47,8 +46,7 @@
                            :coercion   reitit.coercion.schema/coercion
                            :parameters patient-id-params
                            :handler    (fn [req]
-                                      (users-ctl/delete-patient-core req db)
-                                      (response/redirect "/patient/list"))}}]
+                                      (users-ctl/delete-patient-core req db))}}]
        ["/edit" {:post {
                          :coercion   reitit.coercion.schema/coercion
                          :parameters patient-fname-params
@@ -61,16 +59,14 @@
                             :coercion reitit.coercion.schema/coercion
                             :parameters patient-params
                             :handler (fn [req]
-                                       (users-ctl/create-patient-core req db)
-                                       (response/redirect "/"))
+                                       (users-ctl/create-patient-core req db))
                             }}]
        ["/edited" {
                       :post {
                              :coercion reitit.coercion.schema/coercion
                              :parameters patient-params
                              :handler (fn [req]
-                                        (users-ctl/edit-patient-core req db)
-                                        (response/redirect "/patient/list"))
+                                        (users-ctl/edit-patient-core req db))
                              }
                     }]]]
     {:data {:middleware [rrc/coerce-exceptions-middleware

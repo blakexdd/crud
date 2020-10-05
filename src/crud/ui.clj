@@ -54,15 +54,18 @@
                        :value (:firstname user)} "edit"]]]])]]]
    ))
 
-(defn edit-patient
-  [user]
+(defn patient-form
+  [user action error button-name]
+  (println (str "Action: " action))
   (page/html5
-   (println (str "Gender M: " (if (= (:gender user) "F") "checked")))
    (gen-page-head "Edit user" "../form.css")
    [:div {:class "container"}
-     [:form {:id "patient" :action "/patient/edited" :method "post"}
+     [:form {:id "patient" :action action :method "post"}
       [:h3 "Edit user"]
-      [:p "Full name: " [:input {:class "in" :type "text" :name "fname" :value (:firstname user)}]]
+      [:p "Full name: " [:input {:class "in"
+                                 :type "text"
+                                 :name "fname"
+                                 :value (if (:firstname user) (:firstname user) (:fname user))}]]
       [:p "Gender: "
        [:span [:label [:input {:type "radio"
                                :name "gender"
@@ -73,24 +76,14 @@
                          :value "F"
                          :checked (if (= (:gender user) "F") "checked")
                          }] "Female"]]]
-      [:p "Date of birth: " [:input {:class "in" :type "date" :name "bday" :value (:bday user)}]]
-      [:p "Adress: " [:input {:class "in" :type "text" :name "adress" :value (:adress user)}]]
-      [:p "OMS: " [:input {:class "in" :type "number" :name "oms" :value (:oms user)}]]
+      [:p "Date of birth: "
+       [:input {:class "in" :type "date" :name "bday" :value (:bday user)}]]
+      [:p "Adress: "
+       [:input {:class "in" :type "text" :name "adress" :value (:adress user)}]]
+      [:p "OMS: "
+       [:input {:class "in" :type "text" :name "oms" :required "required" :pattern "\\d{16,16}" :value (:oms user)}]]
+      (when (not (nil? error))
+       [:h4 error])
       [:input {:type "hidden" :name "id" :value (:id user)}]
-      [:p [:input {:type "submit" "value" "Edit user"}]]]]
+      [:p [:input {:type "submit" :value button-name}]]]]
    ))
-
-(def create-patient
-  (page/html5
-   (gen-page-head "Create user" "../form.css")
-   [:div {:class "container"}
-     [:form {:id "patient" :action "/patient/create" :method "post"}
-      [:h3 "Create user"]
-      [:p "Full name: " [:input {:class "in" :type "text" :name "fname" :required "required"}]]
-      [:p "Gender: "
-       [:span [:label [:input {:type "radio" :name "gender" :value "M" :checked "true"}] "Male"]
-             [:label [:input {:type "radio" :name "gender" :value "F"}] "Female"]]]
-      [:p "Date of birth: " [:input {:class "in" :type "date" :name "bday" :required "required"}]]
-      [:p "Adress: " [:input {:class "in" :type "text" :name "adress" :required "required"}]]
-      [:p "OMS: " [:input {:class "in" :type "number" :name "oms" :required "required" :maxlength "12" :minlength "12"}]]
-      [:p [:input {:type "submit" "value" "Create user"}]]]]))
