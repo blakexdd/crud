@@ -8,7 +8,9 @@
                  [ring "1.8.1"]
                  [reagent "1.0.0-alpha2"]
                  [org.postgresql/postgresql "9.4.1207"]
-                 [com.layerware/hugsql "0.4.5"]]
+                 [com.layerware/hugsql "0.4.5"]
+                 [integrant "0.8.0"]
+                 [integrant/repl "0.3.2"]]
   :main ^:skip-aot crud.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

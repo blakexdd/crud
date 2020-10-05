@@ -3,20 +3,23 @@ SELECT * FROM patients;
 
 -- :name create-patients-table :! :raw
 CREATE TABLE IF NOT EXISTS patients(
-       firstname text PRIMARY KEY,
+       id SERIAL PRIMARY KEY,
+       firstname text NOT NULL UNIQUE,
        gender char(1) NOT NULL,
        bday date NOT NULL,
        adress text NOT NULL,
        oms bigint NOT NULL
 );
 
--- :name update-patient-by-name :! :raw
+-- :name update-patient-by-id :! :raw
 UPDATE patients
-       SET gender = :gender,
+       SET
+           firstname = :fname,
+           gender = :gender,
            bday = to_date(:bday, 'YYYY-MM-DD'),
            adress = :adress,
            oms = :oms
-       WHERE firstname = :fname
+       WHERE id = :id
 
 -- :name get-patient-by-name :? :1
 SELECT * FROM patients
@@ -24,6 +27,7 @@ SELECT * FROM patients
 
 -- :name add-patient :i! :raw
 INSERT INTO patients
+       (firstname, gender, bday, adress, oms)
        VALUES (:fname, :gender, to_date(:bday, 'YYYY-MM-DD'), :adress, :oms);
 
 -- :name delete-patient-by-name :! :raw

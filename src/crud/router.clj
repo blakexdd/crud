@@ -8,14 +8,23 @@
             [ring.util.response :as response]
             [hiccup.page :as page]))
 
-(def first-name-params {
-                         :form-data {
-                                      :fname s/Str
-                                      }
-                         })
+(def patient-id-params
+  {
+    :form-data {
+                  :id s/Int
+                  }
+ })
+
+(def patient-fname-params
+  {
+    :form-data {
+                 :fname s/Str
+                 }
+    })
 
 (def patient-params {
-                      :form-data {
+                     :form-data {
+                                   :id s/Int
                                    :fname s/Str
                                    :gender s/Str
                                    :bday s/Str
@@ -24,40 +33,43 @@
                                    }
                       })
 
-(def app
+(defn app
+  [db]
   (ring/ring-handler
    (ring/router
     [["/" {:handler users-ctl/default}]
      ["/patient"
        ["/list" {:get {
-                        :handler users-ctl/list-patients
+                       :handler (fn [req]
+                                  (users-ctl/list-patients req db))
                         }}]
        ["/delete" {:post {
-                           :coercion reitit.coercion.schema/coercion
-                           :parameters first-name-params
-                           :handler (fn [res]
-                                      (users-ctl/delete-patient-core res)
+                           :coercion   reitit.coercion.schema/coercion
+                           :parameters patient-id-params
+                           :handler    (fn [req]
+                                      (users-ctl/delete-patient-core req db)
                                       (response/redirect "/patient/list"))}}]
        ["/edit" {:post {
-                         :coercion reitit.coercion.schema/coercion
-                         :parameters first-name-params
-                         :handler users-ctl/edit-patient}}]
+                         :coercion   reitit.coercion.schema/coercion
+                         :parameters patient-fname-params
+                        :handler     (fn [req]
+                                   (users-ctl/edit-patient req db))}}]
        ["/create" {:get {
                           :handler users-ctl/create-patient
                           }
                    :post {
                             :coercion reitit.coercion.schema/coercion
                             :parameters patient-params
-                            :handler (fn [res]
-                                       (users-ctl/create-patient-core res)
+                            :handler (fn [req]
+                                       (users-ctl/create-patient-core req db)
                                        (response/redirect "/"))
                             }}]
        ["/edited" {
                       :post {
                              :coercion reitit.coercion.schema/coercion
                              :parameters patient-params
-                             :handler (fn [res]
-                                        (users-ctl/edit-patient-core res)
+                             :handler (fn [req]
+                                        (users-ctl/edit-patient-core req db)
                                         (response/redirect "/patient/list"))
                              }
                     }]]]

@@ -1,7 +1,6 @@
 (ns crud.controllers.users
   (:use clojure.walk)
   (:require [crud.ui :as ui]
-            [crud.db :refer [db]]
             [crud.sql :as sql]))
 
 (defn default
@@ -13,10 +12,10 @@
    })
 
 (defn edit-patient
-  [req]
-  (let [params (keywordize-keys (:form-params req))
-        firstname (:fname params)]
-    (def user (sql/get-patient-by-name db {:fname firstname}))
+  [req db]
+  (let [params (keywordize-keys (:form-params req))]
+    (println (str "Params: " params))
+    (def user (sql/get-patient-by-name db {:fname (:fname params)}))
     (println (str "Edit params: " user))
     {
      :status 200
@@ -26,11 +25,12 @@
     ))
 
 (defn edit-patient-core
-  [req]
-  (let [params (keywordize-keys (:form-params req))
-        firstname (:fname params)]
-    (sql/update-patient-by-name db {
-                         :fname firstname
+  [req db]
+  (let [params (keywordize-keys (:form-params req))]
+    (println (str "editing user" params))
+    (sql/update-patient-by-id db {
+                         :id (read-string (:id params))
+                         :fname (:fname params)
                          :gender (:gender params)
                          :bday (:bday params)
                          :adress (:adress params)
@@ -39,11 +39,10 @@
   ))
 
 (defn delete-patient-core
-  [req]
-  (let [params (keywordize-keys (:form-params req))
-        firstname (:fname params)]
-    (println (str "Fname: " params))
-    (sql/delete-patient-by-name db {:fname (params :fname)})
+  [req db]
+  (let [params (keywordize-keys (:form-params req))]
+    (println (str "Params " params))
+    (sql/delete-patient-by-name db {:fname (:fname params)})
     (def users (sql/get-all-patients db))
     (clojure.pprint/pprint users)
     {
@@ -54,7 +53,7 @@
   ))
 
 (defn list-patients
-  [req]
+  [req db]
   (def users (sql/get-all-patients db))
   (println "ALL USERS")
   (clojure.pprint/pprint users)
@@ -74,15 +73,14 @@
    })
 
 (defn create-patient-core
-  [res]
-  (let [params (keywordize-keys (:form-params res))
-        firstname (:fname params)]
-    (println (str "User name" firstname))
+  [res db]
+  (let [params (keywordize-keys (:form-params res))]
+    (println (str "User name" params))
     (println "Dumping users")
-    (def already-exists (sql/get-patient-by-name db {:fname firstname}))
+    (def already-exists (sql/get-patient-by-name db {:fname (:fname params)}))
     (if (nil? already-exists)
       (sql/add-patient db {
-                        :fname firstname
+                        :fname (:fname params)
                         :gender (:gender params)
                         :bday (:bday params)
                         :adress (:adress params)

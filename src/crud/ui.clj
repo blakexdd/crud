@@ -76,6 +76,7 @@
       [:p "Date of birth: " [:input {:class "in" :type "date" :name "bday" :value (:bday user)}]]
       [:p "Adress: " [:input {:class "in" :type "text" :name "adress" :value (:adress user)}]]
       [:p "OMS: " [:input {:class "in" :type "number" :name "oms" :value (:oms user)}]]
+      [:input {:type "hidden" :name "id" :value (:id user)}]
       [:p [:input {:type "submit" "value" "Edit user"}]]]]
    ))
 
