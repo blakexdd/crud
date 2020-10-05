@@ -62,28 +62,73 @@
    [:div {:class "container"}
      [:form {:id "patient" :action action :method "post"}
       [:h3 "Edit user"]
-      [:p "Full name: " [:input {:class "in"
-                                 :type "text"
-                                 :name "fname"
-                                 :value (if (:firstname user) (:firstname user) (:fname user))}]]
+      [:p "Full name: "
+       [:input {
+                 :class "in"
+                 :type "text"
+                 :name "fname"
+                 :required "required"
+                 :value (if (:firstname user) (:firstname user) (:fname user))
+                 }]]
       [:p "Gender: "
-       [:span [:label [:input {:type "radio"
-                               :name "gender"
-                               :value "M"
-                               :checked (if (= (:gender user) "M") "checked")}] "Male"]
-        [:label [:input {:type "radio"
-                         :name "gender"
-                         :value "F"
-                         :checked (if (= (:gender user) "F") "checked")
-                         }] "Female"]]]
+       [:span
+        [:label
+         [:input {
+                   :type "radio"
+                   :name "gender"
+                   :value "M"
+                   :checked (if (= (:gender user) "M") "checked")}] "Male"]
+        [:label
+         [:input
+          {
+             :type "radio"
+             :name "gender"
+             :value "F"
+             :checked (if (= (:gender user) "F") "checked")
+             }] "Female"]]]
       [:p "Date of birth: "
-       [:input {:class "in" :type "date" :name "bday" :value (:bday user)}]]
+       [:input
+        {
+          :class "in"
+          :type "date"
+          :name "bday"
+          :required "required"
+          :value (:bday user)
+          }]]
       [:p "Adress: "
-       [:input {:class "in" :type "text" :name "adress" :value (:adress user)}]]
+       [:input
+        {
+          :class "in"
+          :type "text"
+          :name "adress"
+          :required "required"
+          :value (:adress user)
+          }]]
       [:p "OMS: "
-       [:input {:class "in" :type "text" :name "oms" :required "required" :pattern "\\d{16,16}" :value (:oms user)}]]
+       [:input
+        {
+          :class "in"
+          :type "text"
+          :name "oms"
+          :required "required"
+          :pattern "\\d{16,16}"
+          :value (:oms user)
+          }]]
       (when (not (nil? error))
-       [:div {:class "err"} error])
-      [:input {:type "hidden" :name "id" :value (:id user)}]
-      [:p [:input {:type "submit" :value button-name}]]]]
+       [:div
+        {:class "err"}
+        error])
+      [:input
+       {
+         :type "hidden"
+         :name "id"
+         :value (:id user)
+         }]
+      [:p
+       [:input
+        {
+          :type "submit"
+          :value button-name
+          }
+        ]]]]
    ))
