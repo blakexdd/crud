@@ -83,7 +83,7 @@
       [:p "OMS: "
        [:input {:class "in" :type "text" :name "oms" :required "required" :pattern "\\d{16,16}" :value (:oms user)}]]
       (when (not (nil? error))
-       [:h4 error])
+       [:div {:class "err"} error])
       [:input {:type "hidden" :name "id" :value (:id user)}]
       [:p [:input {:type "submit" :value button-name}]]]]
    ))
