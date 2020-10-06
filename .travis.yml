@@ -14,5 +14,7 @@ before_script:
     oms bigint NOT NULL
     );" -U postgres
   - psql -c "CREATE USER admin WITH PASSWORD '1234';" -U postgres
+  - psql -c "SELECT *
+    FROM INFORMATION_SCHEMA.TABLES" -U postgres
 
 script: lein test
