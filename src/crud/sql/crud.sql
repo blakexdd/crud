@@ -25,6 +25,10 @@ UPDATE patients
 SELECT * FROM patients
        WHERE firstname = :fname
 
+-- :name get-patient-by-id :? :1
+SELECT * FROM patients
+       WHERE id = :id
+
 -- :name get-patient-by-oms :? :1
 SELECT * FROM patients
         WHERE oms = :oms
@@ -40,3 +44,8 @@ DELETE FROM patients
 
 -- :name drop-patients-table :! :raw
 DROP TABLE IF EXISTS patients;
+
+-- :name check-table :? :*
+SELECT *
+       FROM INFORMATION_SCHEMA.TABLES
+       WHERE TABLE_NAME = :tname;

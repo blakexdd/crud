@@ -7,12 +7,6 @@
             [schema.core :as s]
             [hiccup.page :as page]))
 
-(def patient-id-params
-  {
-    :form-data {
-                  :id s/Int
-                  }
- })
 
 (def patient-fname-params
   {
@@ -44,7 +38,7 @@
                         }}]
        ["/delete" {:post {
                            :coercion   reitit.coercion.schema/coercion
-                           :parameters patient-id-params
+                           :parameters patient-fname-params
                            :handler    (fn [req]
                                       (users-ctl/delete-patient-core req db))}}]
        ["/edit" {:post {

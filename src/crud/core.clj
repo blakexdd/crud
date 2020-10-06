@@ -34,5 +34,7 @@
 (defn -main
   [& args]
   (ig/init config)
+  ((router/app db) {:request-method :get :uri "/"})
+  ;(println (str "Table: " (clojure.pprint/pprint (sql/check-table db {:tname "patients"}))))
   (println "Server started")
 )
