@@ -5,8 +5,7 @@ services:
 
 before_script:
   - psql -c 'create database users;' -U postgres
-  - psql -c 'use users;' -U postgres
-  - psql -c "create table patients(
+  - psql -d users -c "create table patients(
       id SERIAL PRIMARY KEY,
       firstname text NOT NULL UNIQUE,
       gender char(1) NOT NULL,
