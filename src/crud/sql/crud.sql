@@ -47,5 +47,4 @@ DROP TABLE IF EXISTS patients;
 
 -- :name check-table :? :*
 SELECT *
-       FROM INFORMATION_SCHEMA.TABLES
-       WHERE TABLE_NAME = :tname;
+       FROM INFORMATION_SCHEMA.TABLES;

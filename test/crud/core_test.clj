@@ -50,6 +50,7 @@
                     }))
 
 (deftest creating-test
+  (println (str "Table: " (clojure.pprint/pprint (sql/check-table db))))
   (testing "Creating patient"
            (def creation-status-code (:status (create-test-patient "test" "1234567891234567")))
            (delete-test-patient "test")
