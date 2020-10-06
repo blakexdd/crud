@@ -51,7 +51,6 @@
 
 (deftest creating-test
   (testing "Creating patient"
-           (sql/create-patients-table db)
            (def creation-status-code (:status (create-test-patient "test" "1234567891234567")))
            (delete-test-patient "test")
            (is (= 302 creation-status-code))
