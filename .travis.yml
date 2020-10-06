@@ -5,7 +5,6 @@ services:
 
 before_script:
   - psql -c 'create database users;' -U postgres
-  - psql -c "CREATE USER admin WITH PASSWORD '1234';" -U postgres
   - psql -c "create table patients(
       id SERIAL PRIMARY KEY,
       firstname text NOT NULL UNIQUE,
@@ -13,6 +12,7 @@ before_script:
       bday date NOT NULL,
       adress text NOT NULL,
       oms bigint NOT NULL
-      );" -U users
+      ); -U postgers"
+  - psql -c "ALTER USER postgres WITH PASSWORD '1234';"
 
 script: lein test
