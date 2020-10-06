@@ -1,6 +1,8 @@
 # crud
 
-FIXME: description
+[![Build Status](https://travis-ci.com/blakexdd/crud.svg?branch=master)](https://travis-ci.com/blakexdd/crud)
+
+FIXME: Admission task for HS
 
 ## Installation
 

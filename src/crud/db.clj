@@ -4,7 +4,7 @@
   {:classname "org.postgresql.Driver"
    :subprotocol "postgresql"
    :subname "//localhost:5432/users"
-   :user "postgres"
+   :user "admin"
    :password "1234"
    :sslmode "require"
    })
