@@ -13,6 +13,6 @@ before_script:
       bday date NOT NULL,
       adress text NOT NULL,
       oms bigint NOT NULL
-      );" -U admin
+      );" -U users
 
 script: lein test
