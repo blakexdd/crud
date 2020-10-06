@@ -51,6 +51,7 @@
 
 (deftest creating-test
   (testing "Creating patient"
+           (sql/create-patients-table db)
            (def creation-status-code (:status (create-test-patient "test" "1234567891234567")))
            (delete-test-patient "test")
            (is (= 302 creation-status-code))
@@ -74,6 +75,7 @@
 
 (deftest editing-test
  (testing "Editing user"
+          (sql/create-patients-table db)
           (create-test-patient "test" "1234567891234567")
           (println (str "User info: " (sql/get-patient-by-name db {:fname "test"})))
           (def creation-status (:status (edit-test-patient (sql/get-patient-by-name db {:fname "test"}))))

@@ -5,14 +5,6 @@ services:
 
 before_script:
   - psql -c 'create database users;' -U postgres
-  - psql -c "create table patients(
-      id SERIAL PRIMARY KEY,
-      firstname text NOT NULL UNIQUE,
-      gender char(1) NOT NULL,
-      bday date NOT NULL,
-      adress text NOT NULL,
-      oms bigint NOT NULL
-      );" -U postgres
   - psql -c "ALTER USER postgres WITH PASSWORD '1234';"
 
 script: lein test
