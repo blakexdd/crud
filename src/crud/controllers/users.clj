@@ -15,9 +15,7 @@
 (defn edit-patient
   ([req db]
   (let [params (keywordize-keys (:form-params req))]
-    (println (str "Params: " params))
     (def user (sql/get-patient-by-name db {:fname (:fname params)}))
-    (println (str "Edit params: " user))
     {
      :status 200
      :headers {"Content-Type" "text/html"}
@@ -25,7 +23,6 @@
      }
     ))
   ([req user err]
-   (println (str "Creating patient" err))
    {
     :status 202
     :headers {"Content-Type" "text/html"}
@@ -37,13 +34,9 @@
 (defn edit-patient-core
   [req db]
   (let [params (keywordize-keys (:form-params req))]
-    (println (str "editing user" params))
-
     (def patient-already-exists (sql/get-patient-by-name db {:fname (:fname params)}))
     (def oms-already-exists (sql/get-patient-by-oms db {:oms (read-string (:oms params))}))
     (def real-patient (sql/get-patient-by-id db {:id (read-string (:id params))}))
-
-    (println (str "Patient exists " patient-already-exists))
 
     (cond
       (and (not (nil? patient-already-exists)) (not= (read-string (:id params)) (:id patient-already-exists)))
@@ -67,10 +60,8 @@
 (defn delete-patient-core
   [req db]
   (let [params (keywordize-keys (:form-params req))]
-    (println (str "Params " params))
     (sql/delete-patient-by-name db {:fname (:fname params)})
     (def users (sql/get-all-patients db))
-    (clojure.pprint/pprint users)
     {
      :status 200
      :headers {"Content-Type" "text/html"}
@@ -81,8 +72,6 @@
 (defn list-patients
   [req db]
   (def users (sql/get-all-patients db))
-  (println "ALL USERS")
-  (clojure.pprint/pprint users)
   {
    :status 200
    :headers {"Content-Type" "text/html"}
@@ -98,7 +87,6 @@
    :body (ui/patient-form {} "/patient/create" nil "Create user")
    })
   ([req user err]
-   (println (str "Creating patient" err))
    {
      :status 202
      :headers {"Content-Type" "text/html"}
@@ -112,9 +100,6 @@
 (defn create-patient-core
   [res db]
   (let [params (keywordize-keys (:form-params res))]
-    (println (str "User name" params))
-    (println "Dumping users")
-
     (def patient-already-exists (sql/get-patient-by-name db {:fname (:fname params)}))
     (def oms-already-exists (sql/get-patient-by-oms db {:oms (read-string (:oms params))}))
 

@@ -11,6 +11,7 @@
                  [com.layerware/hugsql "0.4.5"]
                  [integrant "0.8.0"]
                  [integrant/repl "0.3.2"]]
+  :plugins [[lein-cloverage "1.1.2"]]
   :main ^:skip-aot crud.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})

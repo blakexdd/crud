@@ -45,15 +45,18 @@
                                    :gender (:gender user)
                                    :bday (:bday user)
                                    :adress (:adress user)
-                                   :oms "1234567893432543"
+                                   :oms (str (:oms user))
                                    }
                     }))
 
 (deftest creating-test
   (testing "Creating patient"
-           ;(sql/create-patients-table db)
            (def creation-status-code (:status (create-test-patient "test" "1234567891234567")))
            (delete-test-patient "test")
+
+           ; 302 emerges because of redirection
+           ; not good practice to do that, but for small
+           ; project it's ok
            (is (= 302 creation-status-code))
            )
 
@@ -75,10 +78,57 @@
 
 (deftest editing-test
  (testing "Editing user"
-          ;(sql/create-patients-table db)
-          (create-test-patient "test" "1234567891234567")
-          (println (str "User info: " (sql/get-patient-by-name db {:fname "test"})))
-          (def creation-status (:status (edit-test-patient (sql/get-patient-by-name db {:fname "test"}))))
-          (delete-test-patient "test")
-          (is (= 302 creation-status))
-          ))
+   (create-test-patient "test" "1234567891234567")
+   (def patient (sql/get-patient-by-name db {:fname "test"}))
+   (def editing-status (:status (edit-test-patient {
+                                                     :id (:id patient)
+                                                     :firstname "new test name"
+                                                     :gender "F"
+                                                     :bday "2001-03-03"
+                                                     :adress "1234"
+                                                     :oms (:oms patient)
+                                                     })))
+   (delete-test-patient "test")
+   (delete-test-patient "new test name")
+
+   ; 302 emerges because of redirection
+   ; not good practice to do that, but for small
+   ; project it's ok
+   (is (= 302 editing-status)))
+
+  (testing "Editing user giving existing username"
+    (create-test-patient "test" "1234567891234567")
+    (create-test-patient "test1" "1234567891234523")
+    (def patient (sql/get-patient-by-name db {:fname "test"}))
+    (def editing-status (:status (edit-test-patient {
+                                                     :id (:id patient)
+                                                     :firstname "test1"
+                                                     :gender (:gedner patient)
+                                                     :bday (:bday patient)
+                                                     :adress (:adress patient)
+                                                     :oms (:oms patient)
+                                                     })))
+    (delete-test-patient "test")
+    (delete-test-patient "new test name")
+
+    (is (= 202 editing-status))
+    )
+
+  (testing "Editing user giving existing oms"
+    (create-test-patient "test" "1234567891234567")
+    (create-test-patient "test1" "1234567891234523")
+    (def patient (sql/get-patient-by-name db {:fname "test"}))
+    (def editing-status (:status (edit-test-patient {
+                                                     :id (:id patient)
+                                                     :firstname "test"
+                                                     :gender (:gedner patient)
+                                                     :bday (:bday patient)
+                                                     :adress (:adress patient)
+                                                     :oms "1234567891234523"
+                                                     })))
+    (delete-test-patient "test")
+    (delete-test-patient "new test name")
+
+    (is (= 202 editing-status))
+    )
+  )
