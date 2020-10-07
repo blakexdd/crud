@@ -25,6 +25,10 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - 'db'
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_PASSWORD=1234
     networks:
       - new
 networks:

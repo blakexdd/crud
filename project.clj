@@ -10,7 +10,8 @@
                  [org.postgresql/postgresql "9.4.1207"]
                  [com.layerware/hugsql "0.4.5"]
                  [integrant "0.8.0"]
-                 [integrant/repl "0.3.2"]]
+                 [integrant/repl "0.3.2"]
+                 [environ "1.2.0"]]
   :plugins [[lein-cloverage "1.1.2"]]
   :main ^:skip-aot crud.core
   :target-path "target/%s"
