@@ -16,3 +16,6 @@ before_script:
   - psql -c "ALTER USER postgres WITH PASSWORD '1234';"
 
 script: lein test
+
+env:
+  - DB_HOST=localhost DB_PORT=5432 DB_PASSWORD=1234
