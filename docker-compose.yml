@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  db:
+    restart: 'always'
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_DB=users"
+      - "POSTGRES_PASSWORD=1234"
+    networks:
+      new:
+        aliases:
+          - 'my_db'
+    volumes:
+     - /tmp/postgresdata:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    image: 'postgres'
+
+  crud-app:
+    restart: 'always'
+    ports:
+      - '8080:8080'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - 'db'
+    networks:
+      - new
+networks:
+  new:

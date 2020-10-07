@@ -23,7 +23,6 @@
 
 (defmethod ig/init-key :database/connection
   [_ _]
-  ;(sql/drop-patients-table db)
   (sql/create-patients-table db)
   db
   )
@@ -35,6 +34,5 @@
   [& args]
   (ig/init config)
   ((router/app db) {:request-method :get :uri "/"})
-  ;(println (str "Table: " (clojure.pprint/pprint (sql/check-table db {:tname "patients"}))))
   (println "Server started")
 )

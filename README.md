@@ -1,7 +1,6 @@
 # crud
 
 [![Build Status](https://travis-ci.com/blakexdd/crud.svg?branch=master)](https://travis-ci.com/blakexdd/crud)
-[![Coverage Status](https://coveralls.io/repos/github/blakexdd/crud/badge.svg?branch=master)](https://coveralls.io/github/blakexdd/crud?branch=master)
 
 Admission task for HS
 
