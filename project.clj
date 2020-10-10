@@ -1,18 +1,27 @@
 (defproject crud "0.1.0-SNAPSHOT"
   :description "Crud application"
-  :url ""
+  :url ".."
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
+
+  :source-paths ["src/clj" "src/cljs"]
+  :main clj.crud.core
 
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.773"]
                  [reagent "0.10.0"]
+                 [reagent-utils "0.3.3"]
+                 [hiccup "1.0.5"]
+                 [metosin/jsonista "0.2.6"]
+                 [pez/clerk "1.0.0"]
                  [metosin/reitit "0.5.6"]
                  [ring "1.8.1"]
                  [org.postgresql/postgresql "9.4.1207"]
                  [com.layerware/hugsql "0.4.5"]
                  [integrant "0.8.0"]
-                 [integrant/repl "0.3.2"]]
+                 [integrant/repl "0.3.2"]
+                 [venantius/accountant "0.2.5"
+                  :exclusions [org.clojure/tools.reader]]]
 
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-figwheel "0.5.20"]]
@@ -36,7 +45,7 @@
                         {:main "crud.dev"
                          :output-to "public/js/app.js"
                          :output-dir "public/js/out"
-                         :asset-path   "js/out"
+                         :asset-path "js/out"
                          :source-map true
                          :optimizations :none
                          :pretty-print  true}
