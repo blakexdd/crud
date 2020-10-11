@@ -30,39 +30,14 @@
   [db]
   (ring/ring-handler
    (ring/router
-    [["/" {:handler users-ctl/default}]
-     ["/patient"
-       ["/list" {:get {
-                       :handler (fn [req]
-                                  (users-ctl/list-patients req db))
-                        }}]
-       ["/delete" {:post {
-                           :coercion   reitit.coercion.schema/coercion
-                           :parameters patient-fname-params
-                           :handler    (fn [req]
-                                      (users-ctl/delete-patient-core req db))}}]
-       ["/edit" {:post {
-                         :coercion   reitit.coercion.schema/coercion
-                         :parameters patient-fname-params
-                        :handler     (fn [req]
-                                   (users-ctl/edit-patient req db))}}]
-       ["/create" {:get {
-                          :handler users-ctl/create-patient
-                          }
-                   :post {
-                            :coercion reitit.coercion.schema/coercion
-                            :parameters patient-params
-                            :handler (fn [req]
-                                       (users-ctl/create-patient-core req db))
-                            }}]
-       ["/edited" {
-                      :post {
-                             :coercion reitit.coercion.schema/coercion
-                             :parameters patient-params
-                             :handler (fn [req]
-                                        (users-ctl/edit-patient-core req db))
-                             }
-                    }]]]
+    [["/patient"
+       ["/list"]
+       ["/delete"]
+       ["/edit"]
+       ["/create" {:post {
+                           :params patient-params
+                           :handler (fn [req]
+                                      (users-ctl/create-user (:form-params req)))}}]]]
     {:data {:middleware [rrc/coerce-exceptions-middleware
                          reitit.ring.middleware.parameters/parameters-middleware
                          rrc/coerce-request-middleware

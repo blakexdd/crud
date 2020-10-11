@@ -1,9 +1,11 @@
 (ns crud.core
   (:require
     [reagent.core :as reagent :refer [atom]]
+    [re-frame.core :as r]
     [reagent.dom :as rdom]
     [reagent.session :as session]
     [reitit.frontend :as reitit]
+    [crud.events :as events]
     [clerk.core :as clerk]
     [accountant.core :as accountant]
     [crud.ui :as ui]))
@@ -38,6 +40,7 @@
   (rdom/render [current-page] (.getElementById js/document "app")))
 
 (defn init! []
+  (r/dispatch-sync [:initialize-db])
   (clerk/initialize!)
   (accountant/configure-navigation!
    {:nav-handler

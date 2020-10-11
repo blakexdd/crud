@@ -88,4 +88,4 @@ cljs.core._add_method.call(null,reitit.exception.format_exception,new cljs.core.
 return ["Error merging route-data\n\n",cljs.core.pr_str.call(null,data)].join('');
 }));
 
-//# sourceMappingURL=exception.js.map?rel=1602360090893
+//# sourceMappingURL=exception.js.map?rel=1602418803463

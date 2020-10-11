@@ -11,8 +11,8 @@ goog.require('goog.Uri');
 clerk.core.current_path = cljs.core.atom.call(null,location.pathname);
 clerk.core.deferred_navigation_chan = cljs.core.async.chan.call(null,cljs.core.async.sliding_buffer.call(null,(1)));
 clerk.core.debounce = (function clerk$core$debounce(var_args){
-var G__29726 = arguments.length;
-switch (G__29726) {
+var G__32279 = arguments.length;
+switch (G__32279) {
 case 1:
 return clerk.core.debounce.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -119,14 +119,14 @@ if(cljs.core.truth_(clerk.core.browser_supports_manual_restoration_QMARK_)){
 return (history.scrollRestoration = "manual");
 } else {
 return goog.events.listen(window,goog.events.EventType.POPSTATE,(function (event){
-var temp__5733__auto___29728 = event.state;
-if(cljs.core.truth_(temp__5733__auto___29728)){
-var state_29729 = temp__5733__auto___29728;
-var temp__5735__auto___29730 = (state_29729["scroll-top"]);
-if(cljs.core.truth_(temp__5735__auto___29730)){
-var scroll_top_29731 = temp__5735__auto___29730;
+var temp__5733__auto___32281 = event.state;
+if(cljs.core.truth_(temp__5733__auto___32281)){
+var state_32282 = temp__5733__auto___32281;
+var temp__5735__auto___32283 = (state_32282["scroll-top"]);
+if(cljs.core.truth_(temp__5735__auto___32283)){
+var scroll_top_32284 = temp__5735__auto___32283;
 goog.events.listenOnce(window,goog.events.EventType.SCROLL,(function (){
-scrollTo((0),scroll_top_29731);
+scrollTo((0),scroll_top_32284);
 
 return null;
 }));
@@ -145,9 +145,9 @@ return null;
  */
 clerk.core.install_scroll_saver = (function clerk$core$install_scroll_saver(){
 return goog.events.listen(window,goog.events.EventType.SCROLL,clerk.core.debounce.call(null,(function (event){
-var scroll_top_29732 = clerk.core.get_scroll_top.call(null);
-var state_29733 = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"scroll-top","scroll-top",-46723100),scroll_top_29732], null);
-history.replaceState(cljs.core.clj__GT_js.call(null,state_29733),document.title);
+var scroll_top_32285 = clerk.core.get_scroll_top.call(null);
+var state_32286 = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"scroll-top","scroll-top",-46723100),scroll_top_32285], null);
+history.replaceState(cljs.core.clj__GT_js.call(null,state_32286),document.title);
 
 return null;
 }),(200)));
@@ -178,14 +178,14 @@ return null;
  */
 clerk.core.navigate_page_BANG_ = (function clerk$core$navigate_page_BANG_(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___29740 = arguments.length;
-var i__4737__auto___29741 = (0);
+var len__4736__auto___32293 = arguments.length;
+var i__4737__auto___32294 = (0);
 while(true){
-if((i__4737__auto___29741 < len__4736__auto___29740)){
-args__4742__auto__.push((arguments[i__4737__auto___29741]));
+if((i__4737__auto___32294 < len__4736__auto___32293)){
+args__4742__auto__.push((arguments[i__4737__auto___32294]));
 
-var G__29742 = (i__4737__auto___29741 + (1));
-i__4737__auto___29741 = G__29742;
+var G__32295 = (i__4737__auto___32294 + (1));
+i__4737__auto___32294 = G__32295;
 continue;
 } else {
 }
@@ -196,9 +196,9 @@ var argseq__4743__auto__ = ((((1) < args__4742__auto__.length))?(new cljs.core.I
 return clerk.core.navigate_page_BANG_.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__4743__auto__);
 });
 
-(clerk.core.navigate_page_BANG_.cljs$core$IFn$_invoke$arity$variadic = (function (url,p__29736){
-var vec__29737 = p__29736;
-var top_element_id = cljs.core.nth.call(null,vec__29737,(0),null);
+(clerk.core.navigate_page_BANG_.cljs$core$IFn$_invoke$arity$variadic = (function (url,p__32289){
+var vec__32290 = p__32289;
+var top_element_id = cljs.core.nth.call(null,vec__32290,(0),null);
 if(typeof url === 'string'){
 } else {
 throw (new Error("Assert failed: (string? url)"));
@@ -238,11 +238,11 @@ return clerk.core.scroll_to.call(null,(y - y_translation));
 (clerk.core.navigate_page_BANG_.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(clerk.core.navigate_page_BANG_.cljs$lang$applyTo = (function (seq29734){
-var G__29735 = cljs.core.first.call(null,seq29734);
-var seq29734__$1 = cljs.core.next.call(null,seq29734);
+(clerk.core.navigate_page_BANG_.cljs$lang$applyTo = (function (seq32287){
+var G__32288 = cljs.core.first.call(null,seq32287);
+var seq32287__$1 = cljs.core.next.call(null,seq32287);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__29735,seq29734__$1);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__32288,seq32287__$1);
 }));
 
 /**
@@ -254,4 +254,4 @@ clerk.core.disable_default_scroll_restoration.call(null);
 return clerk.core.install_scroll_saver.call(null);
 });
 
-//# sourceMappingURL=core.js.map?rel=1602360095454
+//# sourceMappingURL=core.js.map?rel=1602418810662

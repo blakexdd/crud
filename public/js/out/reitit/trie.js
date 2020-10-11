@@ -2412,4 +2412,4 @@ return reitit.trie._path_matcher.call(null,compiler,compiled_trie);
 (reitit.trie.path_matcher.cljs$lang$maxFixedArity = 2);
 
 
-//# sourceMappingURL=trie.js.map?rel=1602360091188
+//# sourceMappingURL=trie.js.map?rel=1602418803766

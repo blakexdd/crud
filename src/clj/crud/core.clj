@@ -33,6 +33,5 @@
 (defn -main
   [& args]
   (ig/init config)
-  ((router/app db) {:request-method :get :uri "/"})
   (println "Server started")
 )

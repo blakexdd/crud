@@ -1,5 +1,7 @@
 (ns crud.ui
-  (:require [crud.core :refer [path-for]]))
+  (:require [re-frame.core :as r]
+            [crud.events]
+            [crud.subs]))
 
 (defn main-page
   []
@@ -7,9 +9,9 @@
     []
     [:div
      [:h1.main-title "Welcome"]
-     [:a.btn-grad {:href (path-for :create-patient)}
+     [:a.btn-grad {:href "/patient/create"}
       [:span "Create patient"]]
-     [:a.btn-grad {:href (path-for :list-patients)}
+     [:a.btn-grad {:href "/patient/edit"}
       [:span "List patients"]]]))
 
 (defn edit-patient []
@@ -54,22 +56,24 @@
   []
   (fn []
     [:div {:class "container"}
-     [:form {:id "patient" :action "/" :method "post"}
+     [:div#patient
       [:h3 "Creating patient"]
       [:p "Full name: "
        [:input {
                  :class "in"
                  :type "text"
-                 :name "fname"
+                 :name "name"
                  :required "required"
+                 :on-change (fn [e] (r/dispatch [:name-changed (-> e .-target .-value)]))
                  }]]
+      [:p (str "name " @(r/subscribe [:name]))]
       [:p "Gender: "
        [:label
         [:input {
                   :type "radio"
                   :name "gender"
                   :value "M"
-                  :checked true
+                  :on-change (fn [e] (r/dispatch [:gender-changed (-> e .-target .-value)]))
                   }
          ] "Male"]
        [:label
@@ -78,7 +82,9 @@
            :type "radio"
            :name "gender"
            :value "F"
+           :on-change (fn [e] (r/dispatch [:gender-changed (-> e .-target .-value)]))
            }] "Female"]]
+      [:p (str "gender " @(r/subscribe [:gender]))]
       [:p "Date of birth: "
        [:input
         {
@@ -86,7 +92,9 @@
           :type "date"
           :name "bday"
           :required "required"
+          :on-change (fn [e] (r/dispatch [:bday-changed (-> e .-target .-value)]))
           }]]
+      [:p (str "bday " @(r/subscribe [:bday]))]
       [:p "Adress: "
        [:input
         {
@@ -94,7 +102,9 @@
           :type "text"
           :name "adress"
           :required "required"
+          :on-change (fn [e] (r/dispatch [:adress-changed (-> e .-target .-value)]))
           }]]
+      [:p (str "adress " @(r/subscribe [:adress]))]
       [:p "OMS: "
        [:input
         {
@@ -103,15 +113,13 @@
           :name "oms"
           :required "required"
           :pattern "\\d{16,16}"
+          :on-change (fn [e] (r/dispatch [:oms-changed (-> e .-target .-value)]))
           }]]
-      [:input
-       {
-         :type "hidden"
-         :name "id"
-         }]
+      [:p (str "oms " @(r/subscribe [:oms]))]
       [:p
        [:input
         {
           :type "submit"
+          :on-click #(r/dispatch [:create-patient-event])
           }
         ]]]]))
