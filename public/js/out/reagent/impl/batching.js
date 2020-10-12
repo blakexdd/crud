@@ -46,14 +46,14 @@ var n__4613__auto__ = a.length;
 var i = (0);
 while(true){
 if((i < n__4613__auto__)){
-var c_23826 = (a[i]);
-if(c_23826.cljsIsDirty === true){
-c_23826.forceUpdate();
+var c_23827 = (a[i]);
+if(c_23827.cljsIsDirty === true){
+c_23827.forceUpdate();
 } else {
 }
 
-var G__23827 = (i + (1));
-i = G__23827;
+var G__23828 = (i + (1));
+i = G__23828;
 continue;
 } else {
 return null;
@@ -74,8 +74,8 @@ while(true){
 if((i < n__4613__auto__)){
 (fs[i]).call(null);
 
-var G__23828 = (i + (1));
-i = G__23828;
+var G__23829 = (i + (1));
+i = G__23829;
 continue;
 } else {
 return null;
@@ -265,4 +265,4 @@ return null;
 }
 });
 
-//# sourceMappingURL=batching.js.map?rel=1602418804323
+//# sourceMappingURL=batching.js.map?rel=1602507657828

@@ -7,37 +7,29 @@
             [schema.core :as s]
             [hiccup.page :as page]))
 
-
-(def patient-fname-params
-  {
-    :form-data {
-                 :fname s/Str
-                 }
-    })
-
 (def patient-params {
-                     :form-data {
-                                   :id s/Int
-                                   :fname s/Str
-                                   :gender s/Str
-                                   :bday s/Str
-                                   :adress s/Str
-                                   :oms s/Int
-                                   }
+                       :fname s/Str
+                       :gender s/Str
+                       :bday s/Str
+                       :adress s/Str
+                       :oms s/Int
                       })
 
 (defn app
   [db]
   (ring/ring-handler
    (ring/router
-    [["/patient"
+    [
+      ["/" {:get {:handler (fn [req] (prn "REQ / " req))}}]
+      ["/patient"
        ["/list"]
        ["/delete"]
        ["/edit"]
        ["/create" {:post {
                            :params patient-params
                            :handler (fn [req]
-                                      (users-ctl/create-user (:form-params req)))}}]]]
+                                      (prn "Requested")
+                                      (users-ctl/create-user req))}}]]]
     {:data {:middleware [rrc/coerce-exceptions-middleware
                          reitit.ring.middleware.parameters/parameters-middleware
                          rrc/coerce-request-middleware

@@ -2169,3 +2169,712 @@ notifying browser that file changed:  public/js/out/crud/events.js
 Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
 [32mSuccessfully compiled build :app to "public/js/app.js" in 0.786 seconds.[0m
 notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.809 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/crud/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.897 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.817 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.756 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.482 seconds.[0m
+[36m----  Could not Analyze  src/cljs/crud/ui.cljs   line:57  column:3  ----[0m
+
+  [1mWrong number of args (0) passed to: cljs.core/let[0m
+
+  [36m55[0m  [36m(defn create-patient[0m
+  [36m56[0m  [36m  [][0m
+  [33m57[0m  [1m  (let )[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (0) passed to: cljs.core/let[0m
+  [36m58[0m  [36m  (fn [][0m
+  [36m59[0m  [36m    [:div {:class "container"}[0m
+  [36m60[0m  [36m     [:div#patient[0m
+
+[36m----  Analysis Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.76 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.747 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.512 seconds.[0m
+[36m----  Could not Compile  src/cljs/crud/ui.cljs  ----[0m
+
+  [1mfailed compiling file:/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs[0m
+
+[36m----  Compiler Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.795 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.726 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.516 seconds.[0m
+[36m----  Could not Analyze  src/cljs/crud/ui.cljs   line:61  column:5  ----[0m
+
+  [1mWrong number of args (0) passed to: cljs.core/let[0m
+
+  [36m59[0m  [36m      patient-data (reagent/atom default)][0m
+  [36m60[0m  [36m(fn [][0m
+  [33m61[0m  [1m  (let )[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (0) passed to: cljs.core/let[0m
+  [36m62[0m  [36m  [:div {:class "container"}[0m
+  [36m63[0m  [36m   [:div#patient[0m
+  [36m64[0m  [36m    [:h3 "Creating patient"][0m
+
+[36m----  Analysis Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.511 seconds.[0m
+[36m----  Could not Compile  src/cljs/crud/ui.cljs  ----[0m
+
+  [1mfailed compiling file:/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs[0m
+
+[36m----  Compiler Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.493 seconds.[0m
+[36m----  Could not Read  src/cljs/crud/ui.cljs   line:61 ----[0m
+
+  [1m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 61, col 19] The map literal starting with :keys on line 61 column 11 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m59[0m  [36m      patient-data (reagent/atom default)][0m
+  [36m60[0m  [36m(fn [][0m
+  [33m61[0m  [1m  (let [{:keys }])[0m
+  [0m  [0m  [33m  /home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 61, col 19] The map literal starting with :keys on line 61 column 11 contains 1 form(s). Map literals must contain an even number of forms.[0m
+  [36m62[0m  [36m  [:div {:class "container"}[0m
+  [36m63[0m  [36m   [:div#patient[0m
+  [36m64[0m  [36m    [:h3 "Creating patient"][0m
+
+[36m----  Reader Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.527 seconds.[0m
+[36m----  Could not Compile  src/cljs/crud/ui.cljs  ----[0m
+
+  [1mfailed compiling file:/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs[0m
+
+[36m----  Compiler Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.488 seconds.[0m
+[36m----  Could not Compile  src/cljs/crud/ui.cljs  ----[0m
+
+  [1mfailed compiling file:/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs[0m
+
+[36m----  Compiler Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.516 seconds.[0m
+[36m----  Could not Read  src/cljs/crud/ui.cljs   line:61 ----[0m
+
+  [1m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 61, col 57] The map literal starting with :keys on line 61 column 11 contains 3 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m59[0m  [36m      patient-data (reagent/atom default)][0m
+  [36m60[0m  [36m(fn [][0m
+  [33m61[0m  [1m  (let [{:keys [name gender bday adress oms] @default}])[0m
+  [0m  [0m  [33m  /home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 61, col 57] The map literal starting with :keys on line 61 column 11 contains 3 form(s). Map literals must contain an even number of forms.[0m
+  [36m62[0m  [36m  [:div {:class "container"}[0m
+  [36m63[0m  [36m   [:div#patient[0m
+  [36m64[0m  [36m    [:h3 "Creating patient"][0m
+
+[36m----  Reader Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.727 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.749 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.507 seconds.[0m
+[36m----  Could not Compile  src/cljs/crud/ui.cljs  ----[0m
+
+  [1mfailed compiling file:/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs[0m
+
+[36m----  Compiler Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.492 seconds.[0m
+[36m----  Could not Compile  src/cljs/crud/ui.cljs  ----[0m
+
+  [1mfailed compiling file:/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs[0m
+
+[36m----  Compiler Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.726 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.752 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.498 seconds.[0m
+[36m----  Could not Analyze  src/cljs/crud/ui.cljs   line:63  column:20  ----[0m
+
+  [1mUnknown dot form of (. nil preventDefault nil) with classification [:cljs.analyzer/error :cljs.analyzer/symbol ()][0m
+
+  [36m61[0m  [36m(let [{:keys [name gender bday adress oms]} @patient-data[0m
+  [36m62[0m  [36m      create (fn [event patient-data][0m
+  [33m63[0m  [1m               (.preventDefault ))][0m
+  [0m  [0m  [33m               ^--- Unknown dot form of (. nil preventDefault nil) with classification [:cljs.analyzer/error :cljs.analyzer/symbol ()][0m
+  [36m64[0m  [36m[:div {:class "container"}[0m
+  [36m65[0m  [36m [:div#patient[0m
+  [36m66[0m  [36m  [:h3 "Creating patient"][0m
+
+[36m----  Analysis Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.779 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/crud/ui.cljs   line:64  column:21  ----[0m
+
+  [1mUse of undeclared Var crud.ui/dispatch[0m
+
+  [36m60[0m  [36m(fn [][0m
+  [36m61[0m  [36m  (let [{:keys [name gender bday adress oms]} @patient-data[0m
+  [36m62[0m  [36m        create (fn [event patient-data][0m
+  [36m63[0m  [36m                 (.preventDefault event)[0m
+  [33m64[0m  [1m                 (dispatch ))][0m
+  [0m  [0m  [33m                  ^--- Use of undeclared Var crud.ui/dispatch[0m
+  [36m65[0m  [36m  [:div {:class "container"}[0m
+  [36m66[0m  [36m   [:div#patient[0m
+  [36m67[0m  [36m    [:h3 "Creating patient"][0m
+  [36m68[0m  [36m    [:p "Full name: "[0m
+  [36m69[0m  [36m     [:input {[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/ui.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.805 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.727 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.748 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.5 seconds.[0m
+[36m----  Could not Read  src/cljs/crud/ui.cljs   line:66 ----[0m
+
+  [1m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 66, col 34] The map literal starting with :on-submit on line 66 column 21 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m64[0m  [36m               (r/dispatch [:create-patient-event patient-data]))][0m
+  [36m65[0m  [36m[:div {:class "container"}[0m
+  [33m66[0m  [1m [:form#patient {:on-submit }[0m
+  [0m  [0m  [33m /home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 66, col 34] The map literal starting with :on-submit on line 66 column 21 contains 1 form(s). Map literals must contain an even number of forms.[0m
+  [36m67[0m  [36m  [:h3 "Creating patient"][0m
+  [36m68[0m  [36m  [:p "Full name: "[0m
+  [36m69[0m  [36m   [:input {[0m
+
+[36m----  Reader Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/crud/ui.cljs   line:66  column:34  ----[0m
+
+  [1mWrong number of args (0) passed to create[0m
+
+  [36m62[0m  [36m      create (fn [event patient-data][0m
+  [36m63[0m  [36m               (.preventDefault event)[0m
+  [36m64[0m  [36m               (r/dispatch [:create-patient-event patient-data]))][0m
+  [36m65[0m  [36m[:div {:class "container"}[0m
+  [33m66[0m  [1m [:form#patient {:on-submit #(create )}[0m
+  [0m  [0m  [33m                             ^--- Wrong number of args (0) passed to create[0m
+  [36m67[0m  [36m  [:h3 "Creating patient"][0m
+  [36m68[0m  [36m  [:p "Full name: "[0m
+  [36m69[0m  [36m   [:input {[0m
+  [36m70[0m  [36m             :class "in"[0m
+  [36m71[0m  [36m             :type "text"[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/ui.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.767 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.483 seconds.[0m
+[36m----  Could not Read  src/cljs/crud/ui.cljs   line:66 ----[0m
+
+  [1m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 66, col 46] Unmatched delimiter ).[0m
+
+  [36m64[0m  [36m               (r/dispatch [:create-patient-event patient-data]))][0m
+  [36m65[0m  [36m[:div {:class "container"}[0m
+  [33m66[0m  [1m [:form#patient {:on-submit #(create % @)}[0m
+  [0m  [0m  [33m /home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 66, col 46] Unmatched delimiter ).[0m
+  [36m67[0m  [36m  [:h3 "Creating patient"][0m
+  [36m68[0m  [36m  [:p "Full name: "[0m
+  [36m69[0m  [36m   [:input {[0m
+
+[36m----  Reader Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.712 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.722 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.831 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.845 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.733 seconds.[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.575 seconds.[0m
+[36m----  Could not Analyze  src/cljs/crud/ui.cljs   line:68  column:7  ----[0m
+
+  [1mWrong number of args (0) passed to: clojure.core/when[0m
+
+  [36m66[0m  [36m[:form#patient {:on-submit #(create % @patient-data)}[0m
+  [36m67[0m  [36m [:h3 "Creating patient"][0m
+  [33m68[0m  [1m (when )[0m
+  [0m  [0m  [33m ^--- Wrong number of args (0) passed to: clojure.core/when[0m
+  [36m69[0m  [36m [:p "Full name: "[0m
+  [36m70[0m  [36m  [:input {[0m
+  [36m71[0m  [36m            :class "in"[0m
+
+[36m----  Analysis Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.614 seconds.[0m
+[36m----  Could not Analyze  src/cljs/crud/ui.cljs   line:68  column:7  ----[0m
+
+  [1mWrong number of args (0) passed to: clojure.core/when[0m
+
+  [36m66[0m  [36m[:form#patient {:on-submit #(create % @patient-data)}[0m
+  [36m67[0m  [36m [:h3 "Creating patient"][0m
+  [33m68[0m  [1m (when )[0m
+  [0m  [0m  [33m ^--- Wrong number of args (0) passed to: clojure.core/when[0m
+  [36m69[0m  [36m [:p "Full name: "[0m
+  [36m70[0m  [36m  [:input {[0m
+  [36m71[0m  [36m            :class "in"[0m
+
+[36m----  Analysis Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.481 seconds.[0m
+[36m----  Could not Compile  src/cljs/crud/ui.cljs  ----[0m
+
+  [1mfailed compiling file:/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs[0m
+
+[36m----  Compiler Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.516 seconds.[0m
+[36m----  Could not Analyze  src/cljs/crud/ui.cljs   line:69  column:7  ----[0m
+
+  [1mWrong number of args (0) passed to: clojure.core/when[0m
+
+  [36m67[0m  [36m[:form#patient {:on-submit #(create % @patient-data)}[0m
+  [36m68[0m  [36m [:h3 "Creating patient"][0m
+  [33m69[0m  [1m (when )[0m
+  [0m  [0m  [33m ^--- Wrong number of args (0) passed to: clojure.core/when[0m
+  [36m70[0m  [36m [:p "Full name: "[0m
+  [36m71[0m  [36m  [:input {[0m
+  [36m72[0m  [36m            :class "in"[0m
+
+[36m----  Analysis Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.531 seconds.[0m
+[36m----  Could not Analyze  src/cljs/crud/ui.cljs   line:69  column:7  ----[0m
+
+  [1mWrong number of args (0) passed to: clojure.core/when[0m
+
+  [36m67[0m  [36m[:form#patient {:on-submit #(create % @patient-data)}[0m
+  [36m68[0m  [36m [:h3 "Creating patient"][0m
+  [33m69[0m  [1m (when )[0m
+  [0m  [0m  [33m ^--- Wrong number of args (0) passed to: clojure.core/when[0m
+  [36m70[0m  [36m [:p "Full name: "[0m
+  [36m71[0m  [36m  [:input {[0m
+  [36m72[0m  [36m            :class "in"[0m
+
+[36m----  Analysis Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.734 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.506 seconds.[0m
+[36m----  Could not Read  src/cljs/crud/ui.cljs   line:71 ----[0m
+
+  [1m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 71, col 22] Invalid symbol: name:.[0m
+
+  [36m69[0m  [36m(when error[0m
+  [36m70[0m  [36m      [:p "])[0m
+  [33m71[0m  [1m[:p "Full name: "[0m
+  [0m  [0m  [33m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 71, col 22] Invalid symbol: name:.[0m
+  [36m72[0m  [36m [:input {[0m
+  [36m73[0m  [36m           :class "in"[0m
+  [36m74[0m  [36m           :type "text"[0m
+
+[36m----  Reader Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.781 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.538 seconds.[0m
+[36m----  Could not Read  src/cljs/crud/ui.cljs   line:65 ----[0m
+
+  [1m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 65, col 46] Unmatched delimiter ).[0m
+
+  [36m63[0m  [36m               (.preventDefault event)[0m
+  [36m64[0m  [36m               (r/dispatch [:create-patient-event patient-data]))[0m
+  [33m65[0m  [1m      error @(r/subscribe [:name-error]))][0m
+  [0m  [0m  [33m      /home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs [line 65, col 46] Unmatched delimiter ).[0m
+  [36m66[0m  [36m[:div {:class "container"}[0m
+  [36m67[0m  [36m [:form#patient {:on-submit #(create % @patient-data)}[0m
+  [36m68[0m  [36m  [:h3 "Creating patient"][0m
+
+[36m----  Reader Error : Please see src/cljs/crud/ui.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.772 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/crud/ui.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.363 seconds.[0m
+[36m----  Could not Analyze  src/cljs/crud/events.cljs  ----[0m
+
+  [1mNo such namespace: day8.re-frame.http-fx, could not locate day8/re_frame/http_fx.cljs, day8/re_frame/http_fx.cljc, or JavaScript source providing "day8.re-frame.http-fx" (Please check that namespaces with dashes use underscores in the ClojureScript file name) [0m
+
+[36m----  Analysis Error : Please see src/cljs/crud/events.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.357 seconds.[0m
+[36m----  Could not Analyze  src/cljs/crud/events.cljs  ----[0m
+
+  [1mNo such namespace: day8.re-frame.http-fx, could not locate day8/re_frame/http_fx.cljs, day8/re_frame/http_fx.cljc, or JavaScript source providing "day8.re-frame.http-fx" (Please check that namespaces with dashes use underscores in the ClojureScript file name) [0m
+
+[36m----  Analysis Error : Please see src/cljs/crud/events.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.075 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.934 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.822 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.767 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.401 seconds.[0m
+[36m----  Could not Read  src/cljs/crud/events.cljs   line:18 ----[0m
+
+  [1m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/events.cljs [line 18, col 21] The map literal starting with :method on line 12 column 18 contains 9 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m16[0m  [36m                   :on-success [:create-patient-success][0m
+  [36m17[0m  [36m                   :on-failure [:create-patient-failure][0m
+  [33m18[0m  [1m                   }[0m
+  [0m  [0m  [33m                   /home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/events.cljs [line 18, col 21] The map literal starting with :method on line 12 column 18 contains 9 form(s). Map literals must contain an even number of forms.[0m
+  [36m19[0m  [36m     }))[0m
+  [36m20[0m  [36m[0m
+  [36m21[0m  [36m(r/reg-event-db[0m
+
+[36m----  Reader Error : Please see src/cljs/crud/events.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.804 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.827 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.774 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.838 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/crud/events.cljs   line:15  column:28  ----[0m
+
+  [1mUse of undeclared Var crud.events/db[0m
+
+  [36m11[0m  [36m{[0m
+  [36m12[0m  [36m  :http-xhrio {[0m
+  [36m13[0m  [36m                :method :post[0m
+  [36m14[0m  [36m                :uri "localhost:8080/patient/create"[0m
+  [33m15[0m  [1m                :params db[0m
+  [0m  [0m  [33m                        ^--- Use of undeclared Var crud.events/db[0m
+  [36m16[0m  [36m                :on-success [:create-patient-success][0m
+  [36m17[0m  [36m                :on-failure [:create-patient-failure][0m
+  [36m18[0m  [36m                }[0m
+  [36m19[0m  [36m  }))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/events.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.946 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.838 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.829 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.817 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.777 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/crud/events.cljs   line:16  column:38  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or JavaScript source providing "ajax"[0m
+
+  [36m12[0m  [36m:http-xhrio {[0m
+  [36m13[0m  [36m              :method :post[0m
+  [36m14[0m  [36m              :uri "http://localhost:8080/patient/create"[0m
+  [36m15[0m  [36m              :params patient[0m
+  [33m16[0m  [1m              :response-format (ajax/json-response-format {:keywords? true})[0m
+  [0m  [0m  [33m                                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or JavaScript source providing "ajax"[0m
+  [36m17[0m  [36m              :on-success [:create-patient-success][0m
+  [36m18[0m  [36m              :on-failure [:create-patient-failure][0m
+  [36m19[0m  [36m              }[0m
+  [36m20[0m  [36m}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/crud/events.cljs   line:16  column:38  ----[0m
+
+  [1mUse of undeclared Var ajax/json-response-format[0m
+
+  [36m12[0m  [36m:http-xhrio {[0m
+  [36m13[0m  [36m              :method :post[0m
+  [36m14[0m  [36m              :uri "http://localhost:8080/patient/create"[0m
+  [36m15[0m  [36m              :params patient[0m
+  [33m16[0m  [1m              :response-format (ajax/json-response-format {:keywords? true})[0m
+  [0m  [0m  [33m                                ^--- Use of undeclared Var ajax/json-response-format[0m
+  [36m17[0m  [36m              :on-success [:create-patient-success][0m
+  [36m18[0m  [36m              :on-failure [:create-patient-failure][0m
+  [36m19[0m  [36m              }[0m
+  [36m20[0m  [36m}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/events.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.889 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/crud/events.cljs   line:17  column:38  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or JavaScript source providing "ajax"[0m
+
+  [36m13[0m  [36m:http-xhrio {[0m
+  [36m14[0m  [36m              :method :post[0m
+  [36m15[0m  [36m              :uri "http://localhost:8080/patient/create"[0m
+  [36m16[0m  [36m              :params patient[0m
+  [33m17[0m  [1m              :response-format (ajax/json-response-format {:keywords? true})[0m
+  [0m  [0m  [33m                                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or JavaScript source providing "ajax"[0m
+  [36m18[0m  [36m              :on-success [:create-patient-success][0m
+  [36m19[0m  [36m              :on-failure [:create-patient-failure][0m
+  [36m20[0m  [36m              }[0m
+  [36m21[0m  [36m}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/crud/events.cljs   line:17  column:38  ----[0m
+
+  [1mUse of undeclared Var ajax/json-response-format[0m
+
+  [36m13[0m  [36m:http-xhrio {[0m
+  [36m14[0m  [36m              :method :post[0m
+  [36m15[0m  [36m              :uri "http://localhost:8080/patient/create"[0m
+  [36m16[0m  [36m              :params patient[0m
+  [33m17[0m  [1m              :response-format (ajax/json-response-format {:keywords? true})[0m
+  [0m  [0m  [33m                                ^--- Use of undeclared Var ajax/json-response-format[0m
+  [36m18[0m  [36m              :on-success [:create-patient-success][0m
+  [36m19[0m  [36m              :on-failure [:create-patient-failure][0m
+  [36m20[0m  [36m              }[0m
+  [36m21[0m  [36m}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/events.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.832 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/cljs/crud/events.cljs   line:17  column:29  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or JavaScript source providing "ajax"[0m
+
+  [36m13[0m  [36m:http-xhrio {[0m
+  [36m14[0m  [36m              :method :post[0m
+  [36m15[0m  [36m              :uri "http://localhost:8080/patient/create"[0m
+  [36m16[0m  [36m              :params patient[0m
+  [33m17[0m  [1m              :format (ajax/json-request-format)[0m
+  [0m  [0m  [33m                       ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or JavaScript source providing "ajax"[0m
+  [36m18[0m  [36m              :response-format (ajax/json-response-format {:keywords? true})[0m
+  [36m19[0m  [36m              :on-success [:create-patient-success][0m
+  [36m20[0m  [36m              :on-failure [:create-patient-failure][0m
+  [36m21[0m  [36m              }[0m
+  [36m22[0m  [36m}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/crud/events.cljs   line:17  column:29  ----[0m
+
+  [1mUse of undeclared Var ajax/json-request-format[0m
+
+  [36m13[0m  [36m:http-xhrio {[0m
+  [36m14[0m  [36m              :method :post[0m
+  [36m15[0m  [36m              :uri "http://localhost:8080/patient/create"[0m
+  [36m16[0m  [36m              :params patient[0m
+  [33m17[0m  [1m              :format (ajax/json-request-format)[0m
+  [0m  [0m  [33m                       ^--- Use of undeclared Var ajax/json-request-format[0m
+  [36m18[0m  [36m              :response-format (ajax/json-response-format {:keywords? true})[0m
+  [36m19[0m  [36m              :on-success [:create-patient-success][0m
+  [36m20[0m  [36m              :on-failure [:create-patient-failure][0m
+  [36m21[0m  [36m              }[0m
+  [36m22[0m  [36m}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/crud/events.cljs   line:18  column:38  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or JavaScript source providing "ajax"[0m
+
+  [36m14[0m  [36m              :method :post[0m
+  [36m15[0m  [36m              :uri "http://localhost:8080/patient/create"[0m
+  [36m16[0m  [36m              :params patient[0m
+  [36m17[0m  [36m              :format (ajax/json-request-format)[0m
+  [33m18[0m  [1m              :response-format (ajax/json-response-format {:keywords? true})[0m
+  [0m  [0m  [33m                                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or JavaScript source providing "ajax"[0m
+  [36m19[0m  [36m              :on-success [:create-patient-success][0m
+  [36m20[0m  [36m              :on-failure [:create-patient-failure][0m
+  [36m21[0m  [36m              }[0m
+  [36m22[0m  [36m}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/events.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/crud/events.cljs   line:18  column:38  ----[0m
+
+  [1mUse of undeclared Var ajax/json-response-format[0m
+
+  [36m14[0m  [36m              :method :post[0m
+  [36m15[0m  [36m              :uri "http://localhost:8080/patient/create"[0m
+  [36m16[0m  [36m              :params patient[0m
+  [36m17[0m  [36m              :format (ajax/json-request-format)[0m
+  [33m18[0m  [1m              :response-format (ajax/json-response-format {:keywords? true})[0m
+  [0m  [0m  [33m                                ^--- Use of undeclared Var ajax/json-response-format[0m
+  [36m19[0m  [36m              :on-success [:create-patient-success][0m
+  [36m20[0m  [36m              :on-failure [:create-patient-failure][0m
+  [36m21[0m  [36m              }[0m
+  [36m22[0m  [36m}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/crud/events.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.89 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.874 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.864 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.853 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.726 seconds.[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.824 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.73 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.836 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.761 seconds.[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.777 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.845 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.858 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.769 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.775 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.817 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.828 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.848 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.46 seconds.[0m
+[36m----  Could not Read  src/cljs/crud/events.cljs   line:23 ----[0m
+
+  [1m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/events.cljs [line 23, col 21] The map literal starting with :method on line 13 column 18 contains 17 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m21[0m  [36m                   :on-success [:create-patient-success][0m
+  [36m22[0m  [36m                   :on-failure [:create-patient-failure][0m
+  [33m23[0m  [1m                   }[0m
+  [0m  [0m  [33m                   /home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/events.cljs [line 23, col 21] The map literal starting with :method on line 13 column 18 contains 17 form(s). Map literals must contain an even number of forms.[0m
+  [36m24[0m  [36m     }))[0m
+  [36m25[0m  [36m[0m
+  [36m26[0m  [36m(r/reg-event-db[0m
+
+[36m----  Reader Error : Please see src/cljs/crud/events.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.821 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.779 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.787 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.826 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.753 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.824 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.875 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.85 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.795 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.769 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.787 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.849 seconds.[0m
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.487 seconds.[0m
+[36m----  Could not Read  src/cljs/crud/events.cljs   line:24 ----[0m
+
+  [1m/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/events.cljs [line 24, col 21] The map literal starting with :method on line 14 column 18 contains 17 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m22[0m  [36m                   :on-failure [:create-patient-failure][0m
+  [36m23[0m  [36m                   :on[0m
+  [33m24[0m  [1m                   }[0m
+  [0m  [0m  [33m                   /home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/events.cljs [line 24, col 21] The map literal starting with :method on line 14 column 18 contains 17 form(s). Map literals must contain an even number of forms.[0m
+  [36m25[0m  [36m     }))[0m
+  [36m26[0m  [36m[0m
+  [36m27[0m  [36m(r/reg-event-db[0m
+
+[36m----  Reader Error : Please see src/cljs/crud/events.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.804 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/crud/events.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 0.899 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/crud/events.js

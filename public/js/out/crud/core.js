@@ -13,14 +13,14 @@ goog.require('crud.ui');
 crud.core.router = reitit.frontend.router.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["/",new cljs.core.Keyword(null,"index","index",-1531685915)], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, ["/patient",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["/create",new cljs.core.Keyword(null,"create-patient","create-patient",-540547639)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["/edit",new cljs.core.Keyword(null,"edit-patient","edit-patient",1328239938)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, ["/list",new cljs.core.Keyword(null,"list-patients","list-patients",-1311416577)], null)], null)], null));
 crud.core.path_for = (function crud$core$path_for(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___49089 = arguments.length;
-var i__4737__auto___49090 = (0);
+var len__4736__auto___31488 = arguments.length;
+var i__4737__auto___31489 = (0);
 while(true){
-if((i__4737__auto___49090 < len__4736__auto___49089)){
-args__4742__auto__.push((arguments[i__4737__auto___49090]));
+if((i__4737__auto___31489 < len__4736__auto___31488)){
+args__4742__auto__.push((arguments[i__4737__auto___31489]));
 
-var G__49091 = (i__4737__auto___49090 + (1));
-i__4737__auto___49090 = G__49091;
+var G__31490 = (i__4737__auto___31489 + (1));
+i__4737__auto___31489 = G__31490;
 continue;
 } else {
 }
@@ -31,9 +31,9 @@ var argseq__4743__auto__ = ((((1) < args__4742__auto__.length))?(new cljs.core.I
 return crud.core.path_for.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__4743__auto__);
 });
 
-(crud.core.path_for.cljs$core$IFn$_invoke$arity$variadic = (function (route,p__49085){
-var vec__49086 = p__49085;
-var params = cljs.core.nth.call(null,vec__49086,(0),null);
+(crud.core.path_for.cljs$core$IFn$_invoke$arity$variadic = (function (route,p__31484){
+var vec__31485 = p__31484;
+var params = cljs.core.nth.call(null,vec__31485,(0),null);
 if(cljs.core.truth_(params)){
 return new cljs.core.Keyword(null,"path","path",-188191168).cljs$core$IFn$_invoke$arity$1(reitit.frontend.match_by_name.call(null,crud.core.router,route,params));
 } else {
@@ -44,35 +44,35 @@ return new cljs.core.Keyword(null,"path","path",-188191168).cljs$core$IFn$_invok
 (crud.core.path_for.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(crud.core.path_for.cljs$lang$applyTo = (function (seq49083){
-var G__49084 = cljs.core.first.call(null,seq49083);
-var seq49083__$1 = cljs.core.next.call(null,seq49083);
+(crud.core.path_for.cljs$lang$applyTo = (function (seq31482){
+var G__31483 = cljs.core.first.call(null,seq31482);
+var seq31482__$1 = cljs.core.next.call(null,seq31482);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__49084,seq49083__$1);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__31483,seq31482__$1);
 }));
 
 crud.core.page_for = (function crud$core$page_for(route){
-var G__49092 = route;
-var G__49092__$1 = (((G__49092 instanceof cljs.core.Keyword))?G__49092.fqn:null);
-switch (G__49092__$1) {
+var G__31491 = route;
+var G__31491__$1 = (((G__31491 instanceof cljs.core.Keyword))?G__31491.fqn:null);
+switch (G__31491__$1) {
 case "index":
-return new cljs.core.Var(function(){return crud.ui.main_page;},new cljs.core.Symbol("crud.ui","main-page","crud.ui/main-page",711879063,null),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ns","ns",441598760),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"file","file",-1269645878),new cljs.core.Keyword(null,"end-column","end-column",1425389514),new cljs.core.Keyword(null,"column","column",2078222095),new cljs.core.Keyword(null,"line","line",212345235),new cljs.core.Keyword(null,"end-line","end-line",1837326455),new cljs.core.Keyword(null,"arglists","arglists",1661989754),new cljs.core.Keyword(null,"doc","doc",1913296891),new cljs.core.Keyword(null,"test","test",577538877)],[new cljs.core.Symbol(null,"crud.ui","crud.ui",298016592,null),new cljs.core.Symbol(null,"main-page","main-page",1805768915,null),"/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs",16,1,6,6,cljs.core.list(cljs.core.PersistentVector.EMPTY),null,(cljs.core.truth_(crud.ui.main_page)?crud.ui.main_page.cljs$lang$test:null)]));
+return new cljs.core.Var(function(){return crud.ui.main_page;},new cljs.core.Symbol("crud.ui","main-page","crud.ui/main-page",711879063,null),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ns","ns",441598760),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"file","file",-1269645878),new cljs.core.Keyword(null,"end-column","end-column",1425389514),new cljs.core.Keyword(null,"column","column",2078222095),new cljs.core.Keyword(null,"line","line",212345235),new cljs.core.Keyword(null,"end-line","end-line",1837326455),new cljs.core.Keyword(null,"arglists","arglists",1661989754),new cljs.core.Keyword(null,"doc","doc",1913296891),new cljs.core.Keyword(null,"test","test",577538877)],[new cljs.core.Symbol(null,"crud.ui","crud.ui",298016592,null),new cljs.core.Symbol(null,"main-page","main-page",1805768915,null),"/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs",16,1,7,7,cljs.core.list(cljs.core.PersistentVector.EMPTY),null,(cljs.core.truth_(crud.ui.main_page)?crud.ui.main_page.cljs$lang$test:null)]));
 
 break;
 case "create-patient":
-return new cljs.core.Var(function(){return crud.ui.create_patient;},new cljs.core.Symbol("crud.ui","create-patient","crud.ui/create-patient",105102700,null),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ns","ns",441598760),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"file","file",-1269645878),new cljs.core.Keyword(null,"end-column","end-column",1425389514),new cljs.core.Keyword(null,"column","column",2078222095),new cljs.core.Keyword(null,"line","line",212345235),new cljs.core.Keyword(null,"end-line","end-line",1837326455),new cljs.core.Keyword(null,"arglists","arglists",1661989754),new cljs.core.Keyword(null,"doc","doc",1913296891),new cljs.core.Keyword(null,"test","test",577538877)],[new cljs.core.Symbol(null,"crud.ui","crud.ui",298016592,null),new cljs.core.Symbol(null,"create-patient","create-patient",1099983888,null),"/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs",21,1,55,55,cljs.core.list(cljs.core.PersistentVector.EMPTY),null,(cljs.core.truth_(crud.ui.create_patient)?crud.ui.create_patient.cljs$lang$test:null)]));
+return new cljs.core.Var(function(){return crud.ui.create_patient;},new cljs.core.Symbol("crud.ui","create-patient","crud.ui/create-patient",105102700,null),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ns","ns",441598760),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"file","file",-1269645878),new cljs.core.Keyword(null,"end-column","end-column",1425389514),new cljs.core.Keyword(null,"column","column",2078222095),new cljs.core.Keyword(null,"line","line",212345235),new cljs.core.Keyword(null,"end-line","end-line",1837326455),new cljs.core.Keyword(null,"arglists","arglists",1661989754),new cljs.core.Keyword(null,"doc","doc",1913296891),new cljs.core.Keyword(null,"test","test",577538877)],[new cljs.core.Symbol(null,"crud.ui","crud.ui",298016592,null),new cljs.core.Symbol(null,"create-patient","create-patient",1099983888,null),"/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs",21,1,56,56,cljs.core.list(cljs.core.PersistentVector.EMPTY),null,(cljs.core.truth_(crud.ui.create_patient)?crud.ui.create_patient.cljs$lang$test:null)]));
 
 break;
 case "edit-patient":
-return new cljs.core.Var(function(){return crud.ui.edit_patient;},new cljs.core.Symbol("crud.ui","edit-patient","crud.ui/edit-patient",2126744261,null),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ns","ns",441598760),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"file","file",-1269645878),new cljs.core.Keyword(null,"end-column","end-column",1425389514),new cljs.core.Keyword(null,"column","column",2078222095),new cljs.core.Keyword(null,"line","line",212345235),new cljs.core.Keyword(null,"end-line","end-line",1837326455),new cljs.core.Keyword(null,"arglists","arglists",1661989754),new cljs.core.Keyword(null,"doc","doc",1913296891),new cljs.core.Keyword(null,"test","test",577538877)],[new cljs.core.Symbol(null,"crud.ui","crud.ui",298016592,null),new cljs.core.Symbol(null,"edit-patient","edit-patient",-1326195831,null),"/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs",19,1,17,17,cljs.core.list(cljs.core.PersistentVector.EMPTY),null,(cljs.core.truth_(crud.ui.edit_patient)?crud.ui.edit_patient.cljs$lang$test:null)]));
+return new cljs.core.Var(function(){return crud.ui.edit_patient;},new cljs.core.Symbol("crud.ui","edit-patient","crud.ui/edit-patient",2126744261,null),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ns","ns",441598760),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"file","file",-1269645878),new cljs.core.Keyword(null,"end-column","end-column",1425389514),new cljs.core.Keyword(null,"column","column",2078222095),new cljs.core.Keyword(null,"line","line",212345235),new cljs.core.Keyword(null,"end-line","end-line",1837326455),new cljs.core.Keyword(null,"arglists","arglists",1661989754),new cljs.core.Keyword(null,"doc","doc",1913296891),new cljs.core.Keyword(null,"test","test",577538877)],[new cljs.core.Symbol(null,"crud.ui","crud.ui",298016592,null),new cljs.core.Symbol(null,"edit-patient","edit-patient",-1326195831,null),"/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs",19,1,18,18,cljs.core.list(cljs.core.PersistentVector.EMPTY),null,(cljs.core.truth_(crud.ui.edit_patient)?crud.ui.edit_patient.cljs$lang$test:null)]));
 
 break;
 case "list-patients":
-return new cljs.core.Var(function(){return crud.ui.list_patients;},new cljs.core.Symbol("crud.ui","list-patients","crud.ui/list-patients",-714230774,null),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ns","ns",441598760),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"file","file",-1269645878),new cljs.core.Keyword(null,"end-column","end-column",1425389514),new cljs.core.Keyword(null,"column","column",2078222095),new cljs.core.Keyword(null,"line","line",212345235),new cljs.core.Keyword(null,"end-line","end-line",1837326455),new cljs.core.Keyword(null,"arglists","arglists",1661989754),new cljs.core.Keyword(null,"doc","doc",1913296891),new cljs.core.Keyword(null,"test","test",577538877)],[new cljs.core.Symbol(null,"crud.ui","crud.ui",298016592,null),new cljs.core.Symbol(null,"list-patients","list-patients",329114950,null),"/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs",20,1,21,21,cljs.core.list(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"users","users",926978822,null)], null)),null,(cljs.core.truth_(crud.ui.list_patients)?crud.ui.list_patients.cljs$lang$test:null)]));
+return new cljs.core.Var(function(){return crud.ui.list_patients;},new cljs.core.Symbol("crud.ui","list-patients","crud.ui/list-patients",-714230774,null),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ns","ns",441598760),new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"file","file",-1269645878),new cljs.core.Keyword(null,"end-column","end-column",1425389514),new cljs.core.Keyword(null,"column","column",2078222095),new cljs.core.Keyword(null,"line","line",212345235),new cljs.core.Keyword(null,"end-line","end-line",1837326455),new cljs.core.Keyword(null,"arglists","arglists",1661989754),new cljs.core.Keyword(null,"doc","doc",1913296891),new cljs.core.Keyword(null,"test","test",577538877)],[new cljs.core.Symbol(null,"crud.ui","crud.ui",298016592,null),new cljs.core.Symbol(null,"list-patients","list-patients",329114950,null),"/home/vladimir/Documents/Work/HS_admission_task/crud/src/cljs/crud/ui.cljs",20,1,22,22,cljs.core.list(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"users","users",926978822,null)], null)),null,(cljs.core.truth_(crud.ui.list_patients)?crud.ui.list_patients.cljs$lang$test:null)]));
 
 break;
 default:
-throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__49092__$1)].join('')));
+throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__31491__$1)].join('')));
 
 }
 });
@@ -108,4 +108,4 @@ accountant.core.dispatch_current_BANG_.call(null);
 return crud.core.mount_root.call(null);
 });
 
-//# sourceMappingURL=core.js.map?rel=1602422047679
+//# sourceMappingURL=core.js.map?rel=1602514268534

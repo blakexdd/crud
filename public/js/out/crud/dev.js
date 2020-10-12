@@ -13,4 +13,4 @@ cljs.core.enable_console_print_BANG_.call(null);
 devtools.core.install_BANG_.call(null);
 crud.core.init_BANG_.call(null);
 
-//# sourceMappingURL=dev.js.map?rel=1602422047702
+//# sourceMappingURL=dev.js.map?rel=1602514268556

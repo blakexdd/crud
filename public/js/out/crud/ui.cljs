@@ -1,5 +1,6 @@
 (ns crud.ui
   (:require [re-frame.core :as r]
+            [reagent.core :as reagent]
             [crud.events]
             [crud.subs]))
 
@@ -11,7 +12,7 @@
      [:h1.main-title "Welcome"]
      [:a.btn-grad {:href "/patient/create"}
       [:span "Create patient"]]
-     [:a.btn-grad {:href "/patient/edit"}
+     [:a.btn-grad {:href "/patient/list"}
       [:span "List patients"]]]))
 
 (defn edit-patient []
@@ -54,26 +55,34 @@
 
 (defn create-patient
   []
+  (let [default {:name "" :gender "" :bday "" :adress "" :oms ""}
+        patient-data (reagent/atom default)]
   (fn []
+    (let [{:keys [name gender bday adress oms]} @patient-data
+          error @(r/subscribe [:name-error])
+          create (fn [event patient-data]
+                   (.preventDefault event)
+                   (r/dispatch [:create-patient-event patient-data]))]
     [:div {:class "container"}
-     [:div#patient
+     [:form#patient {:on-submit #(create % @patient-data)}
       [:h3 "Creating patient"]
+      (when error
+            [:p error])
       [:p "Full name: "
        [:input {
                  :class "in"
                  :type "text"
                  :name "name"
                  :required "required"
-                 :on-change (fn [e] (r/dispatch [:name-changed (-> e .-target .-value)]))
+                 :on-change #(swap! patient-data assoc :name (-> % .-target .-value))
                  }]]
-      [:p (str "name " @(r/subscribe [:name]))]
       [:p "Gender: "
        [:label
         [:input {
                   :type "radio"
                   :name "gender"
                   :value "M"
-                  :on-change (fn [e] (r/dispatch [:gender-changed (-> e .-target .-value)]))
+                  :on-change #(swap! patient-data assoc :gender (-> % .-target .-value))
                   }
          ] "Male"]
        [:label
@@ -82,9 +91,8 @@
            :type "radio"
            :name "gender"
            :value "F"
-           :on-change (fn [e] (r/dispatch [:gender-changed (-> e .-target .-value)]))
+           :on-change #(swap! patient-data assoc :gender (-> % .-target .-value))
            }] "Female"]]
-      [:p (str "gender " @(r/subscribe [:gender]))]
       [:p "Date of birth: "
        [:input
         {
@@ -92,9 +100,8 @@
           :type "date"
           :name "bday"
           :required "required"
-          :on-change (fn [e] (r/dispatch [:bday-changed (-> e .-target .-value)]))
+          :on-change #(swap! patient-data assoc :bday (-> % .-target .-value))
           }]]
-      [:p (str "bday " @(r/subscribe [:bday]))]
       [:p "Adress: "
        [:input
         {
@@ -102,9 +109,8 @@
           :type "text"
           :name "adress"
           :required "required"
-          :on-change (fn [e] (r/dispatch [:adress-changed (-> e .-target .-value)]))
+          :on-change #(swap! patient-data assoc :adress (-> % .-target .-value))
           }]]
-      [:p (str "adress " @(r/subscribe [:adress]))]
       [:p "OMS: "
        [:input
         {
@@ -113,13 +119,11 @@
           :name "oms"
           :required "required"
           :pattern "\\d{16,16}"
-          :on-change (fn [e] (r/dispatch [:oms-changed (-> e .-target .-value)]))
+          :on-change #(swap! patient-data assoc :oms (-> % .-target .-value))
           }]]
-      [:p (str "oms " @(r/subscribe [:oms]))]
       [:p
        [:input
         {
           :type "submit"
-          :on-click #(r/dispatch [:create-patient-event])
           }
-        ]]]]))
+        ]]]]))))

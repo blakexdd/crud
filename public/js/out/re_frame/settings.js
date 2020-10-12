@@ -13,11 +13,11 @@ return cljs.core.assoc.call(null,m,new cljs.core.Keyword(null,"loaded?","loaded?
 re_frame.settings.loaded_QMARK_ = (function re_frame$settings$loaded_QMARK_(){
 return new cljs.core.Keyword(null,"loaded?","loaded?",-1108015206).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,re_frame.settings.store));
 });
-re_frame.settings.reg_global_interceptor = (function re_frame$settings$reg_global_interceptor(p__31709){
-var map__31710 = p__31709;
-var map__31710__$1 = (((((!((map__31710 == null))))?(((((map__31710.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__31710.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__31710):map__31710);
-var interceptor = map__31710__$1;
-var id = cljs.core.get.call(null,map__31710__$1,new cljs.core.Keyword(null,"id","id",-1388402092));
+re_frame.settings.reg_global_interceptor = (function re_frame$settings$reg_global_interceptor(p__28113){
+var map__28114 = p__28113;
+var map__28114__$1 = (((((!((map__28114 == null))))?(((((map__28114.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__28114.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__28114):map__28114);
+var interceptor = map__28114__$1;
+var id = cljs.core.get.call(null,map__28114__$1,new cljs.core.Keyword(null,"id","id",-1388402092));
 return cljs.core.swap_BANG_.call(null,re_frame.settings.store,cljs.core.update,new cljs.core.Keyword(null,"global-interceptors","global-interceptors",-1995759472),(function (global_interceptors){
 var ids = cljs.core.map.call(null,new cljs.core.Keyword(null,"id","id",-1388402092),global_interceptors);
 if(re_frame.interop.debug_enabled_QMARK_){
@@ -35,8 +35,8 @@ re_frame.settings.get_global_interceptors = (function re_frame$settings$get_glob
 return new cljs.core.Keyword(null,"global-interceptors","global-interceptors",-1995759472).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,re_frame.settings.store));
 });
 re_frame.settings.clear_global_interceptors = (function re_frame$settings$clear_global_interceptors(var_args){
-var G__31714 = arguments.length;
-switch (G__31714) {
+var G__28118 = arguments.length;
+switch (G__28118) {
 case 0:
 return re_frame.settings.clear_global_interceptors.cljs$core$IFn$_invoke$arity$0();
 
@@ -57,8 +57,8 @@ return cljs.core.swap_BANG_.call(null,re_frame.settings.store,cljs.core.assoc,ne
 
 (re_frame.settings.clear_global_interceptors.cljs$core$IFn$_invoke$arity$1 = (function (id){
 return cljs.core.swap_BANG_.call(null,re_frame.settings.store,cljs.core.update,new cljs.core.Keyword(null,"global-interceptors","global-interceptors",-1995759472),(function (global_interceptors){
-return cljs.core.into.call(null,re_frame.interop.empty_queue,cljs.core.remove.call(null,(function (p1__31712_SHARP_){
-return cljs.core._EQ_.call(null,id,new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__31712_SHARP_));
+return cljs.core.into.call(null,re_frame.interop.empty_queue,cljs.core.remove.call(null,(function (p1__28116_SHARP_){
+return cljs.core._EQ_.call(null,id,new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__28116_SHARP_));
 }),global_interceptors));
 }));
 }));
@@ -66,4 +66,4 @@ return cljs.core._EQ_.call(null,id,new cljs.core.Keyword(null,"id","id",-1388402
 (re_frame.settings.clear_global_interceptors.cljs$lang$maxFixedArity = 1);
 
 
-//# sourceMappingURL=settings.js.map?rel=1602418809998
+//# sourceMappingURL=settings.js.map?rel=1602507661734

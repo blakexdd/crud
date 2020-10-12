@@ -14,8 +14,8 @@ re_frame.cofx.reg_cofx = (function re_frame$cofx$reg_cofx(id,handler){
 return re_frame.registrar.register_handler.call(null,re_frame.cofx.kind,id,handler);
 });
 re_frame.cofx.inject_cofx = (function re_frame$cofx$inject_cofx(var_args){
-var G__31959 = arguments.length;
-switch (G__31959) {
+var G__28363 = arguments.length;
+switch (G__28363) {
 case 1:
 return re_frame.cofx.inject_cofx.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -61,4 +61,4 @@ return cljs.core.assoc.call(null,coeffects,new cljs.core.Keyword(null,"db","db",
 }));
 re_frame.cofx.inject_db = re_frame.cofx.inject_cofx.call(null,new cljs.core.Keyword(null,"db","db",993250759));
 
-//# sourceMappingURL=cofx.js.map?rel=1602418810219
+//# sourceMappingURL=cofx.js.map?rel=1602507661957

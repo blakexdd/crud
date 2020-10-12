@@ -21,7 +21,8 @@
                  [com.layerware/hugsql "0.4.5"]
                  [integrant "0.8.0"]
                  [integrant/repl "0.3.2"]
-                 [cljs-http "0.1.46"]
+                 [cljs-ajax "0.7.3"]
+                 [day8.re-frame/http-fx "0.2.1"]
                  [venantius/accountant "0.2.5"
                   :exclusions [org.clojure/tools.reader]]]
 
@@ -53,7 +54,7 @@
                          :pretty-print  true}
                         :figwheel
                         {:on-jsload "crud.core/mount-root"
-                         :open-urls ["http://localhost:3449/index.html"]}}
+                         :open-urls ["http://localhost:3449"]}}
                        :release
                        {:source-paths ["src" "env/prod/cljs"]
                         :compiler

@@ -2,60 +2,35 @@
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [re-frame.core :as r]
             [crud.db :as db]
-            [cljs-http.client :as http]
-            [cljs.core.async :refer [<!]]))
+            [day8.re-frame.http-fx]
+            [ajax.core :as ajax]))
 
-(r/reg-event-db
+(r/reg-event-fx
   :create-patient-event
- (fn [db _]
-   (.log js/console "name " (:name db) " oms " (:oms db))
-   (go (let [response (<! (http/post "http://localhost:8080/patient/create"
-                                     {:form-params
-                                       {:fname (:name db)
-                                        :gender (:gender db)
-                                        :bday (:bday db)
-                                        :adress (:adress db)
-                                        :oms (:oms db)
-                                        }
-                                      }))]
-         (.log js/console "res" (:body response))))
-   {}))
+ (fn [coeff [_ patient]]
+   (prn "creating patient" patient)
+   {
+     :http-xhrio {
+                   :method :post
+                   :uri "http://localhost:8080/patient/create"
+                   :params patient
+                   :timeout 5000
+                   :format (ajax/json-request-format {:keywords? true})
+                   :response-format (ajax/text-response-format)
+                   :on-success [:create-patient-success]
+                   :on-failure [:create-patient-failure]
+                   }
+     }))
 
 (r/reg-event-db
-  :name-changed
- (fn [db [_ name]]
-   (.log js/console "Name " name)
-   (assoc db :name name)))
+  :create-patient-success
+ (prn "Successfully created")
+ {})
 
 (r/reg-event-db
- :gender-changed
- (fn [db [_ gender]]
-   (.log js/console "Gender " gender)
-   (assoc db :gender gender)))
-
-(r/reg-event-db
- :bday-changed
- (fn [db [_ bday]]
-   (.log js/console "bday " bday)
-   (assoc db :bday bday)))
-
-(r/reg-event-db
- :bday-changed
- (fn [db [_ bday]]
-   (.log js/console "bday " bday)
-   (assoc db :bday bday)))
-
-(r/reg-event-db
- :adress-changed
- (fn [db [_ adress]]
-   (.log js/console "adress " adress)
-   (assoc db :adress adress)))
-
-(r/reg-event-db
- :oms-changed
- (fn [db [_ oms]]
-   (.log js/console "oms " oms)
-   (assoc db :oms oms)))
+ :create-patient-failure
+ (prn "failed to create patient")
+ {})
 
 (r/reg-event-db
   :initialize-db
